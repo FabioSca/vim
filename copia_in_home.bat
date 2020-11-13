@@ -5,3 +5,5 @@ copy /Y vim_guide.vim ..\.
 copy /Y vim_plugin.vim  ..\.
 copy /Y vim_shortcuts.vim ..\.
 copy /Y _vimrc ..\.
+copy /Y nastran.vim ..\vimfiles\syntax\.
+copy /Y marc.vim ..\vimfiles\syntax\.
