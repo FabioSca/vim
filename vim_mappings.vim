@@ -45,6 +45,7 @@ let g:which_key_map['c'] = {
     \ 'Z'    : [':PluginInstall'  , 'Install plugins'       ],
     \ 'U'    : [':PluginUpdate'   , 'Update plugins'        ],
     \ 'M'    : [':Maps'           , 'Show mappings'         ],
+    \ 'c'    : ['':e ~/vim_cheat.vim' , 'Edit plugin command'  ]
     \ }
 " }}}
 
@@ -107,12 +108,12 @@ let g:which_key_map['m'] = {
     \ 'name' : '+mode'      ,
     \ 'w'    : [':Goyo'     , 'Write mode (toggle)'         ],
     \ 'z'    : [':ZoomWin'  , 'Zoom window (toggle)'        ],
-    \ 'g'    : [':GitGutterToggle', 'Toggle gutter'         ],
     \ 's'    : [':Startify' , 'Start up page'               ],
     \ 'n'    : [':set number!' , 'Toggle numbers'           ],
     \ 'N'    : [':set relativenumber!' , 'Toggle rel numbers']
     \ }
 " }}}
+"   \ 'g'    : [':GitGutterToggle', 'Toggle gutter'         ],
 
 " Nastran: <leader>+n+{n,h,r} {{{
 let g:which_key_map['n'] = {

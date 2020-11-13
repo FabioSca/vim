@@ -46,8 +46,6 @@ set selection=inclusive
 "" Enable hidden buffers
 set hidden
 
-"" opzione che mostra quante volte una cosa cercata
-set shortmess-=S
 
 
 "" Searching
@@ -374,6 +372,9 @@ set laststatus=2
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
+
+"" opzione che mostra quante volte una cosa cercata
+set shortmess-=S
 
 """"""""""""""""""""""""""""""
 " => MOVIMENTI INTELLIGENTI
