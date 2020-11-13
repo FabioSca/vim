@@ -95,16 +95,16 @@ Plug 'vim-syntastic/syntastic'
 " Plug 'neomake/neomake'
 
 " Markdown / Writting
-Plug 'reedes/vim-pencil'
-Plug 'tpope/vim-markdown'
-Plug 'jtratner/vim-flavored-markdown'
+" Plug 'reedes/vim-pencil'
+" Plug 'tpope/vim-markdown'
+" Plug 'jtratner/vim-flavored-markdown'
 " Plug 'LanguageTool'
 
 " Git Support
-Plug 'kablamo/vim-git-log'
-Plug 'gregsexton/gitv'
-Plug 'tpope/vim-fugitive'
-"Plug 'jaxbot/github-issues.vim'
+" Plug 'kablamo/vim-git-log'
+" Plug 'gregsexton/gitv'
+" Plug 'tpope/vim-fugitive'
+" Plug 'jaxbot/github-issues.vim'
 
 " PHP Support
 " Plug 'phpvim/phpcd.vim'

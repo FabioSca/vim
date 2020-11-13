@@ -45,7 +45,7 @@ let g:which_key_map['c'] = {
     \ 'Z'    : [':PluginInstall'  , 'Install plugins'       ],
     \ 'U'    : [':PluginUpdate'   , 'Update plugins'        ],
     \ 'M'    : [':Maps'           , 'Show mappings'         ],
-    \ 'c'    : ['':e ~/vim_cheat.vim' , 'Edit plugin command'  ]
+    \ 'c'    : [':e ~/vim_cheat.txt' , 'Cheat sheet'   ] 
     \ }
 " }}}
 
@@ -113,7 +113,6 @@ let g:which_key_map['m'] = {
     \ 'N'    : [':set relativenumber!' , 'Toggle rel numbers']
     \ }
 " }}}
-"   \ 'g'    : [':GitGutterToggle', 'Toggle gutter'         ],
 
 " Nastran: <leader>+n+{n,h,r} {{{
 let g:which_key_map['n'] = {
@@ -140,6 +139,7 @@ let g:which_key_map['v'] = {
     \ 'd'    : [':Gdiff'    , 'Diff'                        ]
     \ }
 " }}}
+
 " Run: <leader>+r+{a,s,t} {{{
 let g:which_key_map['r'] = {
     \ 'name' : '+run'       ,

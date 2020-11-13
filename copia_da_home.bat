@@ -1,7 +1,7 @@
 
 cd %~dp0
 
-copy /Y ..\vim_cheat.vim .
+copy /Y ..\vim_cheat.txt .
 copy /Y ..\vim_mappings.vim  .
 copy /Y ..\vim_plugin_command.vim . 
 copy /Y ..\vim_guide.vim . 
