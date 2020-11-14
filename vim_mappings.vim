@@ -39,13 +39,13 @@ let g:which_key_map['c'] = {
     \ 'name' : '+config',
     \ 'r'    : [':so ~/_vimrc'    , 'Reload _vimrc'         ],
     \ 'e'    : [':e ~/_vimrc'     , 'Edit _vimrc'           ],
-    \ 'm'    : [':e ~/vim_mappings.vim' , 'Edit key WhichKey'],
-    \ 'p'    : [':e ~/vim_plugin.vim'   , 'Edit Plugin '   ],
-    \ 'i'    : [':e ~/vim_plugin_command.vim' , 'Edit plugin command'  ],
+    \ 'm'    : [':e ~/vim_main/vim_mappings.vim' , 'Edit key WhichKey'],
+    \ 'p'    : [':e ~/vim_main/vim_plugin.vim'   , 'Edit Plugin '   ],
+    \ 'i'    : [':e ~/vim_main/vim_plugin_command.vim' , 'Edit plugin command'  ],
     \ 'Z'    : [':PluginInstall'  , 'Install plugins'       ],
     \ 'U'    : [':PluginUpdate'   , 'Update plugins'        ],
     \ 'M'    : [':Maps'           , 'Show mappings'         ],
-    \ 'c'    : [':e ~/vim_cheat.txt' , 'Cheat sheet'   ] 
+    \ 'c'    : [':e ~/vim_main/vim_cheat.txt' , 'Cheat sheet'   ] 
     \ }
 " }}}
 

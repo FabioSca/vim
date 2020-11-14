@@ -261,7 +261,7 @@ let g:EasyMotion_smartcase = 1
 
 " => Leader {{{  
 """"""""""""""""""""""""""""""
-source ~/vim_mappings.vim
+source ~/vim_main/vim_mappings.vim
 " }}}
 
 " => YankStack  una specie di Emacs   {{{  

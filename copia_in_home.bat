@@ -1,12 +1,14 @@
 
 cd %~dp0
 
-copy /Y vim_cheat.txt ..\
-copy /Y vim_mappings.vim ..\. 
-copy /Y vim_plugin_command.vim ..\. 
-copy /Y vim_guide.vim ..\. 
-copy /Y vim_plugin.vim  ..\.
-copy /Y vim_shortcuts.vim ..\.
 copy /Y _vimrc ..\.
-copy /Y nastran.vim ..\vimfiles\syntax\.
-copy /Y marc.vim ..\vimfiles\syntax\.
+
+rem copy /Y vim_cheat.txt ..\
+rem copy /Y vim_mappings.vim ..\. 
+rem copy /Y vim_plugin_command.vim ..\. 
+rem copy /Y vim_guide.vim ..\. 
+rem copy /Y vim_plugin.vim  ..\.
+rem copy /Y vim_shortcuts.vim ..\.
+rem 
+rem copy /Y nastran.vim ..\vimfiles\syntax\.
+rem copy /Y marc.vim ..\vimfiles\syntax\.
