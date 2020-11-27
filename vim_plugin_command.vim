@@ -357,7 +357,7 @@ set grepprg=/bin/grep\ -nH
 "map <leader>nf :NERDTreeFind<cr>
 " }}}
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-" 设置当文件被改动时自动载入
+" 
 set autoread
 au FocusGained * :checktime
 
@@ -523,9 +523,6 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-leader-guide
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" TextEdit might fail if hidden is not set.
-set hidden
 
 " Some servers have issues with backup files, see #649.
 set nobackup
