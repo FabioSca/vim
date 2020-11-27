@@ -85,6 +85,8 @@ let g:which_key_map['t'] = {
     \ 'c'    : [':tabclose'   , 'Close tab'                 ],
     \ }
 " }}}
+
+
 " Buffers:            <leader>+b+{s,l,h,d,t,f,T,q,Q,n,w} {{{
 let g:which_key_map['b'] = {
     \ 'name' : '+buffer'      ,
@@ -126,14 +128,14 @@ let g:which_key_map['n'] = {
 " }}}
 
 " VCS: <leader>+v+{a,P,f,p,s,c,b,l,d} {{{
-let g:which_key_map['v'] = {
-    \ 'name' : '+vcs'       ,
+let g:which_key_map['g'] = {
+    \ 'name' : '+git'       ,
     \ 'a'    : [':Gwrite'   , 'Add'                         ],
     \ 'P'    : [':Gpush'    , 'Push'                        ],
     \ 'f'    : [':Gfetch'   , 'Fetch'                       ],
     \ 'p'    : [':Gpull'    , 'Pull'                        ],
     \ 's'    : [':Gstatus'  , 'Status'                      ],
-    \ 'c'    : [':Gcommit'  , 'Commit'                      ],
+    \ 'c'    : [':Git commit -a -m "standard message from vim"'  , 'Commit'                      ],
     \ 'b'    : [':Gblame'   , 'Blame'                       ],
     \ 'l'    : [':GV', 'Log'                                ],
     \ 'd'    : [':Gdiff'    , 'Diff'                        ]
