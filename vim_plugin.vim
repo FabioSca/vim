@@ -70,10 +70,12 @@ Plug 'gilsondev/searchtasks.vim'
 Plug 'liuchengxu/vim-which-key'
 " Plug 'Shougo/unite'
 "
-Plug 'sunaku/vim-shortcut'
+"Plug 'sunaku/vim-shortcut'
 "Plug 'easymotion/vim-easymotion'
 
 Plug 'terryma/vim-multiple-cursors'
+
+Plug 'simeji/winresizer'
 
 
 " Apri una shell
@@ -87,8 +89,7 @@ Plug 'universal-ctags/ctags'
 " Plug 'honza/vim-snippets'
 " Plug 'Townk/vim-autoclose'      " no serve progetto chiuso
 " Plug 'Raimondi/delimitMate'     " chiude le parentesi
-Plug 'tomtom/tcomment_vim'        " commenta e toglie commenti con shortcut
-Plug 'tobyS/vmustache'            " no usero mai serve per script
+" Plug 'tomtom/tcomment_vim'        " commenta e toglie commenti con shortcut
 " Plug 'janko-m/vim-test'         " lancia test
 " Plug 'maksimr/vim-jsbeautify'   " javascript
 Plug 'vim-syntastic/syntastic'

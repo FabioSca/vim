@@ -135,12 +135,12 @@ let g:which_key_map['g'] = {
     \ 'f'    : [':Gfetch'   , 'Fetch'                       ],
     \ 'p'    : [':Gpull'    , 'Pull'                        ],
     \ 's'    : [':Gstatus'  , 'Status'                      ],
-    \ 'c'    : [':Git commit -a -m "standard message from vim"'  , 'Commit'                      ],
-    \ 'b'    : [':Gblame'   , 'Blame'                       ],
+    \ 'c'    : [':Git commit -a -m "standard message from vim"  '  , 'Commit'                      ],
     \ 'l'    : [':GV', 'Log'                                ],
     \ 'd'    : [':Gdiff'    , 'Diff'                        ]
     \ }
 " }}}
+" \ 'b'    : [':Gblame'   , 'Blame'                       ],
 
 " Run: <leader>+r+{a,s,t} {{{
 let g:which_key_map['r'] = {
