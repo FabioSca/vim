@@ -417,46 +417,6 @@ let g:gitgutter_enabled=0
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim-leader-guide
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Define prefix dictionary
-let g:lmap =  {}
-
-" Second level dictionaries:
-let g:lmap.f = { 'name' : 'File Menu' }
-let g:lmap.o = { 'name' : 'Open Stuff' }
-" 'name' is a special field. It will define the name of the group.
-" leader-f is the "File Menu" group.
-" Unnamed groups will show a default string
-
-" Provide commands and descriptions for existing mappings
-	nmap <silent> <leader>fd :e $MYVIMRC<CR>
-	let g:lmap.f.d = ['e $MYVIMRC', 'Open vimrc']
-
-	nmap <silent> <leader>fs :so %<CR>
-	" let g:lmap.f.s = ['so %', 'Source file']
-
-	nmap <silent> <leader>oo  :copen<CR>
-	" let g:lmap.o.o = ['copen', 'Open quickfix']
-
-	nmap <silent> <leader>ol  :lopen<CR>
-	" let g:lmap.o.l = ['lopen', 'Open locationlist']
-
-	nmap <silent> <leader>fw :w<CR>
-	" let g:lmap.f.w = ['w', 'Write file']
-
-" Create new menus not based on existing mappings:
-let g:lmap.g = {
-				\'name' : 'Git Menu',
-				\'s' : ['Gstatus', 'Git Status'],
-                \'p' : ['Gpull',   'Git Pull'],
-                \'u' : ['Gpush',   'Git Push'],
-                \'c' : ['Gcommit', 'Git Commit'],
-                \'w' : ['Gwrite',  'Git Write'],
-                \}
-
 " If you use NERDCommenter:
 let g:lmap.c = { 'name' : 'Comments' }
 " Define some descriptions
@@ -481,8 +441,8 @@ let g:lmap.c[' '] = ['call feedkeys("\<Plug>NERDCommenterToggle")','Toggle']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Neocomplete Plugin mappins
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
+" inoremap <expr><C-g>     neocomplete#undo_completion()
+" inoremap <expr><C-l>     neocomplete#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
@@ -492,8 +452,8 @@ inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1

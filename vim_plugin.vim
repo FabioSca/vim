@@ -47,14 +47,14 @@ Plug 'romgrk/vimfiler-prompt'
 Plug 'majutsushi/tagbar', {'on':'TagbarToggle'}
 "Plug 'ervandew/supertab' " fa casino con jedi 
 " Plug 'BufOnly.vim'
-Plug 'wesQ3/vim-windowswap'
+" Plug 'wesQ3/vim-windowswap'   " carino per muoversi tra finestre ma se ne puo fare a meno
 
 " Plug 'SirVer/ultisnips'
 Plug 'godlygeek/tabular'
 " Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'benmills/vimux'           " interagisce con tmux
-Plug 'jeetsukumaran/vim-buffergator'   " ricordare solo che ,b apre buffergator list puo essere sostituido :b TAB
-Plug 'bling/vim-bufferline'
+" Plug 'jeetsukumaran/vim-buffergator'   " mi sono stufato meglio which-key avrebbe stessi commandi ricordare solo che ,b apre buffergator list puo essere sostituido :b TAB
+Plug 'bling/vim-bufferline'    " serve per avere in alto il nome del buffer tenere
 " Plug 'ap/vim-buftabline'   " niente di che
 
 Plug 'gilsondev/searchtasks.vim'
@@ -66,7 +66,7 @@ Plug 'gilsondev/searchtasks.vim'
 " Plug 'francoiscabrol/ranger.vim'
 
 
-" Plug 'hecal3/vim-leader-guide'
+" Plug 'hecal3/vim-leader-guide'   # non stabile meglio vim-which-key
 Plug 'liuchengxu/vim-which-key'
 " Plug 'Shougo/unite'
 "
@@ -103,7 +103,7 @@ Plug 'vim-syntastic/syntastic'
 " Git Support
 " Plug 'kablamo/vim-git-log'
 " Plug 'gregsexton/gitv'
-" Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " Plug 'jaxbot/github-issues.vim'
 
 " PHP Support
@@ -151,6 +151,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Or build from source code by using yarn: https://yarnpkg.com
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
 
 

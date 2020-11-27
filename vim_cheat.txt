@@ -146,6 +146,13 @@ P                   put (paste) before cursor/current line
 
 
 ##############################################################################
+# REGEXPR
+##############################################################################
+:g/.* s t a| ddu/#  comando bello che cerca in marc inizio incremento e poi la parola ddu con # dice anche quale riga
+:10,20g/^$/d        cancella tutte le righe bianche 
+
+
+##############################################################################
 # MACROS
 ##############################################################################
 
@@ -191,6 +198,13 @@ v%                  selects matching parenthesis
 vi{                 selects matching curly brace
 vi"                 selects text between double quotes
 vi'                 selects text between single quotes
+
+MAPS
+per scrivere su un file i comandi shortcut mappati
+
+:redir >> ~/maps.txt
+:map
+:redir END
 
 ##############################################################################
 # SPELLING
@@ -290,6 +304,9 @@ cfirst              display the first error
 clast               display the last error
 [count]cn           display [count] next error
 [count]cp           display [count] previous error
+
+
+:%s/cerca//ng        dice quante volte compare conta count
 
 
 ##############################################################################
@@ -601,7 +618,6 @@ CTRL-p              generate PHP DOC
 
 <leader>md          preview markdown
 
-<leader>s           preview in safari
 
 <leader>x           colorpicker
 
