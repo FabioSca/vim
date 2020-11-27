@@ -54,7 +54,7 @@ Plug 'godlygeek/tabular'
 " Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'benmills/vimux'           " interagisce con tmux
 " Plug 'jeetsukumaran/vim-buffergator'   " mi sono stufato meglio which-key avrebbe stessi commandi ricordare solo che ,b apre buffergator list puo essere sostituido :b TAB
-Plug 'bling/vim-bufferline'    " serve per avere in alto il nome del buffer tenere
+" Plug 'bling/vim-bufferline'    " serve per avere in alto il nome del buffer tenere
 " Plug 'ap/vim-buftabline'   " niente di che
 
 Plug 'gilsondev/searchtasks.vim'
