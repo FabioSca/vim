@@ -176,7 +176,6 @@ endif
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#branch#vcs_priority = ["git"]
 
-set laststatus=2
 let g:airline_powerline_fonts = 0
 let g:airline_detect_spell=0
 
@@ -520,13 +519,7 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim-leader-guide
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
+" Coc settings
 
 " Give more space for displaying messages.
 set cmdheight=2
@@ -614,7 +607,7 @@ augroup mygroup
 augroup end
 
 " Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
+" Example `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 

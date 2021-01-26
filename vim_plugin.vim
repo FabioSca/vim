@@ -8,7 +8,16 @@ filetype off                  " required
 " FABIO ad Agosto 2019 cambiato in https://github.com/junegunn/vim-plug
 " vundle forse non + supportato
 "
+let need_to_install_plugins = 0
+"if empty(glob('~/.vim/autoload/plug.vim'))
+"    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+"        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"    let need_to_install_plugins = 1
+"endif
+
 call plug#begin('~/.vim/plugged')
+
+
 
 " Make sure you use single quotes
 
@@ -82,7 +91,7 @@ Plug 'simeji/winresizer'
 Plug 'Shougo/vimproc.vim'
 Plug 'shougo/vimshell.vim'
 
-Plug 'voldikss/vim-floaterm'
+" Plug 'voldikss/vim-floaterm'
 
 " Generic Programming Support 
 Plug 'universal-ctags/ctags'
@@ -148,12 +157,12 @@ Plug 'crusoexia/vim-monokai'
 " Python
 
 " Use release branch (recommend)
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Or build from source code by using yarn: https://yarnpkg.com
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
 
 
@@ -179,3 +188,9 @@ Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 " Initialize plugin system
 call plug#end()
 
+if need_to_install_plugins == 1
+    echo "Installing plugins..."
+    silent! PlugInstall
+    echo "Done!"
+    q
+endif

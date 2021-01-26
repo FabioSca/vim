@@ -149,7 +149,7 @@ P                   put (paste) before cursor/current line
 # REGEXPR
 ##############################################################################
 :g/.* s t a| ddu/#  comando bello che cerca in marc inizio incremento e poi la parola ddu con # dice anche quale riga
-:10,20g/^$/d        cancella tutte le righe bianche 
+:10,20g/^$/d        cancella tutte le righe bianche -- delete
 
 
 ##############################################################################

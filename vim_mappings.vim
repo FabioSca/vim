@@ -123,9 +123,11 @@ let g:which_key_map['n'] = {
     \ 's'    : [':set syn=nastran' ,"syntax"],
     \ 'z'    : [':set foldexpr=""' ,"nofold"],
     \ 'f'    : [':call NastranFold()' ,"fold"],
-    \ 'r'    : [':silent ! start cmd /k C:\MSC.Software\lancia_nastran.bat % %:p:h <CR>'    , 'RUN'                        ]
+    \ 'r'    : [':! start C:\MSC.Software\lancia_nastran.bat % %:p:h '    , 'RUN'                        ]
     \ }
 " }}}
+
+"    \ 'r'    : [':silent ! start cmd /k C:\MSC.Software\lancia_nastran.bat % %:p:h <CR>'    , 'RUN'                        ]
 
 " VCS: <leader>+v+{a,P,f,p,s,c,b,l,d} {{{
 let g:which_key_map['g'] = {

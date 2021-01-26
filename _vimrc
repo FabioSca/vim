@@ -133,13 +133,7 @@ else
   let g:indentLine_faster = 1
 
   
-  if $COLORTERM == 'gnome-terminal'
-    set term=gnome-256color
-  else
-    if $TERM == 'xterm'
-      set term=xterm-256color
-    endif
-  endif
+set t_Co=256
   
 endif
 
@@ -153,8 +147,6 @@ endif
 set gcr=a:blinkon0
 set scrolloff=3
 
-"" Status bar
-set laststatus=2
 
 "" Use modeline overrides
 set modeline
@@ -291,7 +283,7 @@ set nowrap "Wrap lines
 nmap <F3> :NERDTreeToggle<CR>
 
 " => Floaring term  {{{  
-let g:floaterm_keymap_toggle = '<F4>'
+" let g:floaterm_keymap_toggle = '<F4>'
 " }}}
   
 """"""""""""""""""""""""""""""
