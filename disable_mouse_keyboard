@@ -1,0 +1,4 @@
+#!/bin/sh
+G300_XINPUT_ID=$(xinput list | egrep --color=never "G300.*keyboard" | sed -r 's/.*id=([0-9]+).*/\1/')
+echo ciao $G300_XINPUT
+xinput set-mode ${G300_XINPUT_ID} RELATIVE
