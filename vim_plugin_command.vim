@@ -19,11 +19,11 @@ let g:bufferline_active_highlight = 'airline_c'
 
 " => bufExplorer plugin {{{  
 """"""""""""""""""""""""""""""
-let g:bufExplorerDefaultHelp=0
-let g:bufExplorerShowRelativePath=1
-let g:bufExplorerFindActive=1
-let g:bufExplorerSortBy='name'
-map <leader>o :BufExplorer<cr>
+" let g:bufExplorerDefaultHelp=0
+" let g:bufExplorerShowRelativePath=1
+" let g:bufExplorerFindActive=1
+" let g:bufExplorerSortBy='name'
+" map <leader>o :BufExplorer<cr>
 " }}}
 
 
@@ -171,6 +171,46 @@ endif
 
 
 " vim-airline
+"" airline configuration {{{
+
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#branch#vcs_priority = ["git"]
+
+set laststatus=2
+let g:airline_powerline_fonts = 0
+let g:airline_detect_spell=0
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+" unicode symbols
+"let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+"let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.crypt = '🔒'
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.maxlinenr = '☰'
+"let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.branch = '⎇'
+"let g:airline_symbols.paste = 'ρ'
+"let g:airline_symbols.paste = 'Þ'
+"let g:airline_symbols.paste = '∥'
+let g:airline_symbols.paste = 'PASTE'
+let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.notexists = '∄'
+let g:airline_symbols.whitespace = 'Ξ'
+
+"" powerline symbols
+"let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+"let g:airline_symbols.branch = ''
+"let g:airline_symbols.readonly = ''
+"let g:airline_symbols.linenr = ''
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 ""-let g:airline_theme = 'powerlineish'
@@ -225,15 +265,17 @@ let g:airline_powerline_fonts = 1
 
 
 " VimFiler {{{
-let g:vimfiler_as_default_explorer = 1
-call vimfiler#custom#profile('explorer', 'context', {
-      \  'safe': 0,
-      \  'simple': 0
-      \ })
-autocmd FileType vimfiler nmap <buffer> i :VimFilerPrompt<CR>
-let g:vimfiler_tree_leaf_icon = '¦'
-let g:vimfiler_tree_opened_icon = '▾'
-let g:vimfiler_tree_closed_icon = '▸'
+
+" let g:vimfiler_as_default_explorer = 1
+" call vimfiler#custom#profile('explorer', 'context', {
+"       \  'safe': 0,
+"       \  'simple': 0
+"       \ })
+" autocmd FileType vimfiler nmap <buffer> i :VimFilerPrompt<CR>
+" let g:vimfiler_tree_leaf_icon = '¦'
+" let g:vimfiler_tree_opened_icon = '▾'
+" let g:vimfiler_tree_closed_icon = '▸'
+
 " let g:vimfiler_file_icon = '-'
 " let g:vimfiler_marked_file_icon = '*'
 "}}}
@@ -261,7 +303,7 @@ let g:EasyMotion_smartcase = 1
 
 " => Leader {{{  
 """"""""""""""""""""""""""""""
-source ~/vim_mappings.vim
+source ~/vim_main/vim_mappings.vim
 " }}}
 
 " => YankStack  una specie di Emacs   {{{  
@@ -315,7 +357,7 @@ set grepprg=/bin/grep\ -nH
 "map <leader>nf :NERDTreeFind<cr>
 " }}}
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-" 设置当文件被改动时自动载入
+" 
 set autoread
 au FocusGained * :checktime
 
@@ -417,46 +459,6 @@ let g:gitgutter_enabled=0
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim-leader-guide
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Define prefix dictionary
-let g:lmap =  {}
-
-" Second level dictionaries:
-let g:lmap.f = { 'name' : 'File Menu' }
-let g:lmap.o = { 'name' : 'Open Stuff' }
-" 'name' is a special field. It will define the name of the group.
-" leader-f is the "File Menu" group.
-" Unnamed groups will show a default string
-
-" Provide commands and descriptions for existing mappings
-	nmap <silent> <leader>fd :e $MYVIMRC<CR>
-	let g:lmap.f.d = ['e $MYVIMRC', 'Open vimrc']
-
-	nmap <silent> <leader>fs :so %<CR>
-	" let g:lmap.f.s = ['so %', 'Source file']
-
-	nmap <silent> <leader>oo  :copen<CR>
-	" let g:lmap.o.o = ['copen', 'Open quickfix']
-
-	nmap <silent> <leader>ol  :lopen<CR>
-	" let g:lmap.o.l = ['lopen', 'Open locationlist']
-
-	nmap <silent> <leader>fw :w<CR>
-	" let g:lmap.f.w = ['w', 'Write file']
-
-" Create new menus not based on existing mappings:
-let g:lmap.g = {
-				\'name' : 'Git Menu',
-				\'s' : ['Gstatus', 'Git Status'],
-                \'p' : ['Gpull',   'Git Pull'],
-                \'u' : ['Gpush',   'Git Push'],
-                \'c' : ['Gcommit', 'Git Commit'],
-                \'w' : ['Gwrite',  'Git Write'],
-                \}
-
 " If you use NERDCommenter:
 let g:lmap.c = { 'name' : 'Comments' }
 " Define some descriptions
@@ -481,8 +483,8 @@ let g:lmap.c[' '] = ['call feedkeys("\<Plug>NERDCommenterToggle")','Toggle']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Neocomplete Plugin mappins
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
+" inoremap <expr><C-g>     neocomplete#undo_completion()
+" inoremap <expr><C-l>     neocomplete#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
@@ -492,8 +494,8 @@ inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
@@ -521,9 +523,6 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-leader-guide
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" TextEdit might fail if hidden is not set.
-set hidden
 
 " Some servers have issues with backup files, see #649.
 set nobackup

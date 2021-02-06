@@ -39,13 +39,13 @@ let g:which_key_map['c'] = {
     \ 'name' : '+config',
     \ 'r'    : [':so ~/_vimrc'    , 'Reload _vimrc'         ],
     \ 'e'    : [':e ~/_vimrc'     , 'Edit _vimrc'           ],
-    \ 'm'    : [':e ~/vim_mappings.vim' , 'Edit key WhichKey'],
-    \ 'p'    : [':e ~/vim_plugin.vim'   , 'Edit Plugin '   ],
-    \ 'i'    : [':e ~/vim_plugin_command.vim' , 'Edit plugin command'  ],
+    \ 'm'    : [':e ~/vim_main/vim_mappings.vim' , 'Edit key WhichKey'],
+    \ 'p'    : [':e ~/vim_main/vim_plugin.vim'   , 'Edit Plugin '   ],
+    \ 'i'    : [':e ~/vim_main/vim_plugin_command.vim' , 'Edit plugin command'  ],
     \ 'Z'    : [':PluginInstall'  , 'Install plugins'       ],
     \ 'U'    : [':PluginUpdate'   , 'Update plugins'        ],
     \ 'M'    : [':Maps'           , 'Show mappings'         ],
-    \ 'c'    : [':e ~/vim_cheat.txt' , 'Cheat sheet'   ] 
+    \ 'c'    : [':e ~/vim_main/vim_cheat.txt' , 'Cheat sheet'   ] 
     \ }
 " }}}
 
@@ -85,6 +85,8 @@ let g:which_key_map['t'] = {
     \ 'c'    : [':tabclose'   , 'Close tab'                 ],
     \ }
 " }}}
+
+
 " Buffers:            <leader>+b+{s,l,h,d,t,f,T,q,Q,n,w} {{{
 let g:which_key_map['b'] = {
     \ 'name' : '+buffer'      ,
@@ -126,19 +128,19 @@ let g:which_key_map['n'] = {
 " }}}
 
 " VCS: <leader>+v+{a,P,f,p,s,c,b,l,d} {{{
-let g:which_key_map['v'] = {
-    \ 'name' : '+vcs'       ,
+let g:which_key_map['g'] = {
+    \ 'name' : '+git'       ,
     \ 'a'    : [':Gwrite'   , 'Add'                         ],
     \ 'P'    : [':Gpush'    , 'Push'                        ],
     \ 'f'    : [':Gfetch'   , 'Fetch'                       ],
     \ 'p'    : [':Gpull'    , 'Pull'                        ],
     \ 's'    : [':Gstatus'  , 'Status'                      ],
-    \ 'c'    : [':Gcommit'  , 'Commit'                      ],
-    \ 'b'    : [':Gblame'   , 'Blame'                       ],
+    \ 'c'    : [':Git commit -a -m "standard message from vim"  '  , 'Commit'                      ],
     \ 'l'    : [':GV', 'Log'                                ],
     \ 'd'    : [':Gdiff'    , 'Diff'                        ]
     \ }
 " }}}
+" \ 'b'    : [':Gblame'   , 'Blame'                       ],
 
 " Run: <leader>+r+{a,s,t} {{{
 let g:which_key_map['r'] = {

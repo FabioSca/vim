@@ -146,6 +146,13 @@ P                   put (paste) before cursor/current line
 
 
 ##############################################################################
+# REGEXPR
+##############################################################################
+:g/.* s t a| ddu/#  comando bello che cerca in marc inizio incremento e poi la parola ddu con # dice anche quale riga
+:10,20g/^$/d        cancella tutte le righe bianche 
+
+
+##############################################################################
 # MACROS
 ##############################################################################
 
@@ -191,6 +198,13 @@ v%                  selects matching parenthesis
 vi{                 selects matching curly brace
 vi"                 selects text between double quotes
 vi'                 selects text between single quotes
+
+MAPS
+per scrivere su un file i comandi shortcut mappati
+
+:redir >> ~/maps.txt
+:map
+:redir END
 
 ##############################################################################
 # SPELLING
@@ -290,6 +304,9 @@ cfirst              display the first error
 clast               display the last error
 [count]cn           display [count] next error
 [count]cp           display [count] previous error
+
+
+:%s/cerca//ng        dice quante volte compare conta count
 
 
 ##############################################################################
@@ -438,37 +455,6 @@ A                   zoom (maximize-minimize) the NERDTree window
 ?                   toggle help
 
 
-##############################################################################
-# PLUGINS > PDV
-##############################################################################
-
-
-CTRL-P              generate PHP DOC
-
-
-##############################################################################
-# PLUGINS > PICKACOLOR
-##############################################################################
-
-
-:PickHEX            choose color in system color picker
-
-
-##############################################################################
-# PLUGINS > SNIPMATE
-##############################################################################
-
-
-<tab>               expand snippet
-
-
-##############################################################################
-# PLUGINS > SPARKUP
-##############################################################################
-
-
-CTRL-e              execute sparkup (zen coding expansion)
-CTRL-n              jump to the next empty tag / attribute
 
 
 ##############################################################################
@@ -526,6 +512,10 @@ vees'               surround 2 words (ee) with quotes '
 
 
 :Git                run a git command
+
+:Git commit -a -m "ciao"
+:Gpush          " f  12345
+
 :Gstatus            git status : - to (un)stage , p to patch, C to commit
 :Gcommit            git commit
 :Gread              empty the buffer and revert to the last commit
@@ -536,14 +526,6 @@ vees'               surround 2 words (ee) with quotes '
 :Gdiff              perform a vimdiff against the current file of a certain revision
 :Gblame             open blame information in a scroll bound vertical splitt
 :Gbrowse            open github
-
-
-##############################################################################
-# PLUGINS > VIM-MARKDOWN-PREVIEW
-##############################################################################
-
-
-:Mm                 preview markdown document in webbrowser
 
 
 ##############################################################################
@@ -632,7 +614,6 @@ CTRL-p              generate PHP DOC
 
 <leader>md          preview markdown
 
-<leader>s           preview in safari
 
 <leader>x           colorpicker
 

@@ -75,51 +75,51 @@ let g:lmap.g={
               \}
 
 " gitgutter hunks menu
-let g:lmap.g.h={
-                \'name' : 'Hunks',
-                \'p' : ['call feedkeys("\<Plug>GitGutterPreviewHunk")', 'Preview'],
-                \'u' : ['call feedkeys("\<Plug>GitGutterUndoHunk")', 'Undo'],
-                \'s' : ['call feedkeys("\<Plug>GitGutterStageHunk")', 'Stage']
-                \}
-
-" nerdcommenter menu
-let g:lmap.c={
-              \'name' : 'Comments',
-              \' ' : ['call feedkeys("\<Plug>NERDCommenterToggle")', 'Toggle'],
-              \'$' : ['call feedkeys("\<Plug>NERDCommenterToEOL")', 'From cursor to EOL'],
-              \'a' : ['call feedkeys("\<Plug>NERDCommenterAltDelims")', 'Switch to alternate delimiters'],
-              \'A' : ['call feedkeys("\<Plug>NERDCommenterAppend")', 'Add comment at EOL'],
-              \'b' : ['call feedkeys("\<Plug>NERDCommenterAlignBoth")', 'Aligned both sides'],
-              \'c' : ['call feedkeys("\<Plug>NERDCommenterComment")', 'Comment'],
-              \'i' : ['call feedkeys("\<Plug>NERDCommenterInvert")', 'Toggle selected line(s)'],
-              \'l' : ['call feedkeys("\<Plug>NERDCommenterAlignLeft")', 'Aligned left side'],
-              \'m' : ['call feedkeys("\<Plug>NERDCommenterMinimal")', 'Minimal'],
-              \'n' : ['call feedkeys("\<Plug>NERDCommenterNested")', 'Nested'],
-              \'s' : ['call feedkeys("\<Plug>NERDCommenterSexy")', 'Sexy'],
-              \'u' : ['call feedkeys("\<Plug>NERDCommenterUncomment")', 'Uncomment'],
-              \'y' : ['call feedkeys("\<Plug>NERDCommenterYank")', 'Yank & comment']
-              \}
-
-" test menu
-let g:lmap.e={
-              \'name' : 'Test',
-              \'t' : ['TestNearest', 'Nearest'],
-              \'T' : ['TestFile', 'This file'],
-              \'a' : ['TestSuite', 'All'],
-              \'l' : ['TestLast', 'Last'],
-              \'g' : ['TestVisit', 'Open test file']
-              \}
-
-" toggles
-let g:lmap.t={
-              \'name' : 'Toggles',
-              \'l' : ['LToggle', 'Location list'],
-              \'q' : ['call asyncrun#quickfix_toggle(8)', 'Quickfix window'],
-              \'N' : ['NERDTreeToggle', 'NERDTree'],
-              \'t' : ['TagbarToggle', 'Tagbar'],
-              \'n' : ['NumbersToggle', 'Numbers'],
-              \'u' : ['UndotreeToggle', 'Undotree']
-              \}
+" let g:lmap.g.h={
+"                 \'name' : 'Hunks',
+"                 \'p' : ['call feedkeys("\<Plug>GitGutterPreviewHunk")', 'Preview'],
+"                 \'u' : ['call feedkeys("\<Plug>GitGutterUndoHunk")', 'Undo'],
+"                 \'s' : ['call feedkeys("\<Plug>GitGutterStageHunk")', 'Stage']
+"                 \}
+" 
+" " nerdcommenter menu
+" let g:lmap.c={
+"               \'name' : 'Comments',
+"               \' ' : ['call feedkeys("\<Plug>NERDCommenterToggle")', 'Toggle'],
+"               \'$' : ['call feedkeys("\<Plug>NERDCommenterToEOL")', 'From cursor to EOL'],
+"               \'a' : ['call feedkeys("\<Plug>NERDCommenterAltDelims")', 'Switch to alternate delimiters'],
+"               \'A' : ['call feedkeys("\<Plug>NERDCommenterAppend")', 'Add comment at EOL'],
+"               \'b' : ['call feedkeys("\<Plug>NERDCommenterAlignBoth")', 'Aligned both sides'],
+"               \'c' : ['call feedkeys("\<Plug>NERDCommenterComment")', 'Comment'],
+"               \'i' : ['call feedkeys("\<Plug>NERDCommenterInvert")', 'Toggle selected line(s)'],
+"               \'l' : ['call feedkeys("\<Plug>NERDCommenterAlignLeft")', 'Aligned left side'],
+"               \'m' : ['call feedkeys("\<Plug>NERDCommenterMinimal")', 'Minimal'],
+"               \'n' : ['call feedkeys("\<Plug>NERDCommenterNested")', 'Nested'],
+"               \'s' : ['call feedkeys("\<Plug>NERDCommenterSexy")', 'Sexy'],
+"               \'u' : ['call feedkeys("\<Plug>NERDCommenterUncomment")', 'Uncomment'],
+"               \'y' : ['call feedkeys("\<Plug>NERDCommenterYank")', 'Yank & comment']
+"               \}
+" 
+" " test menu
+" let g:lmap.e={
+"               \'name' : 'Test',
+"               \'t' : ['TestNearest', 'Nearest'],
+"               \'T' : ['TestFile', 'This file'],
+"               \'a' : ['TestSuite', 'All'],
+"               \'l' : ['TestLast', 'Last'],
+"               \'g' : ['TestVisit', 'Open test file']
+"               \}
+" 
+" " toggles
+" let g:lmap.t={
+"               \'name' : 'Toggles',
+"               \'l' : ['LToggle', 'Location list'],
+"               \'q' : ['call asyncrun#quickfix_toggle(8)', 'Quickfix window'],
+"               \'N' : ['NERDTreeToggle', 'NERDTree'],
+"               \'t' : ['TagbarToggle', 'Tagbar'],
+"               \'n' : ['NumbersToggle', 'Numbers'],
+"               \'u' : ['UndotreeToggle', 'Undotree']
+"               \}
 
 " searches
 "let g:lmap.a=['Ag', 'ag search']
