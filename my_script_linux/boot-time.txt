@@ -1,0 +1,4 @@
+systemd-analyze 
+systemd-analyze blame | head
+systemd-analyze critical-chain
+systemd-analyze plot > plot.svg
