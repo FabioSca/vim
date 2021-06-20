@@ -24,7 +24,7 @@ call plug#begin('~/.vim/plugged')
 " Fabio plugin in SpaceVim
 " startify troppo lento sembra problema noto probabile casino con altri plugin 
 " forse messo per primo non rallenta
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 
 
 " On-demand loading
@@ -101,8 +101,9 @@ Plug 'universal-ctags/ctags'
 " Plug 'tomtom/tcomment_vim'        " commenta e toglie commenti con shortcut
 " Plug 'janko-m/vim-test'         " lancia test
 " Plug 'maksimr/vim-jsbeautify'   " javascript
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 " Plug 'neomake/neomake'
+" Plug 'zxqfl/tabnine-vim'
 
 " Markdown / Writting
 " Plug 'reedes/vim-pencil'
@@ -115,6 +116,8 @@ Plug 'vim-syntastic/syntastic'
 " Plug 'gregsexton/gitv'
 Plug 'tpope/vim-fugitive'
 " Plug 'jaxbot/github-issues.vim'
+"
+" Plug 'vimwiki/vimwiki'
 
 " PHP Support
 " Plug 'phpvim/phpcd.vim'
@@ -144,6 +147,11 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'w0ng/vim-hybrid'
 " Plug 'AlessandroYorba/Sierra'
 Plug 'daylerees/colour-schemes'
+Plug 'sjl/badwolf'
+Plug 'chriskempson/base16-vim'
+" Plug 'tomasiser/vim-code-dark'
+Plug 'mhartington/oceanic-next'
+
 
 " Atom One Dark theme.
 Plug 'joshdick/onedark.vim'
@@ -157,10 +165,10 @@ Plug 'crusoexia/vim-monokai'
 " Python
 
 " Use release branch (recommend)
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Or build from source code by using yarn: https://yarnpkg.com
-" Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
 " Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
@@ -179,7 +187,8 @@ Plug 'crusoexia/vim-monokai'
 " endif
 
 " Plug 'Valloric/YouCompleteMe'  "meglio non usarlo in Windows
-" Plug 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
+" Plug 'ycm-core/YouCompleteMe'
 
 
 " Plug 'zchee/deoplete-jedi'
