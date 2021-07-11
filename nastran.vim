@@ -189,7 +189,7 @@ endif
 let b:current_syntax = "nastran"
 
 let &colorcolumn=join(range(9,16),",") . "," . join(range(25,32),",") . "," . join(range(41,48),",") . "," . join(range(57,64),",") . "," . join(range(73,80),",")
-hi ColorColumn guibg=#333333 ctermbg=DarkGray
+hi ColorColumn guibg=#333333 ctermbg=236 ctermfg=White cterm=NONE
 
 function! NastranFoldExpr(lnum) 
 
