@@ -8,13 +8,13 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 try
-source ~/vim_plugin.vim
+source ~/vim_main/vim_plugin.vim
 catch
 endtry
 
 
 "try
-"source ~/vim_guide.vim
+"source ~/vim_main/vim_guide.vim
 "catch
 "endtry
 
@@ -62,7 +62,7 @@ set fileformats=unix,dos,mac
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-syntax on
+" syntax on
 set nowrap
 
 """""""""""""""""""""""""""""""""""""
@@ -167,19 +167,19 @@ set modelines=10
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 try
-source ~/vim_plugin_command.vim
+source ~/vim_main/vim_plugin_command.vim
 catch
 endtry
 
 " attenzione ho aggiunto un nuovo vim_mapping per scorciatoie
 try
-source ~/vim_shortcuts.vim
+source ~/vim_main/vim_shortcuts.vim
 catch
 endtry
 
 
 try
-source ~/vim_mappings.vim
+source ~/vim_main/vim_mappings.vim
 catch
 endtry
 
@@ -362,7 +362,7 @@ set laststatus=2
 "---set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 
 "" opzione che mostra quante volte una cosa cercata
@@ -452,13 +452,13 @@ let g:spacegray_italicize_comments = 1
 
 
 " Syntastic Configuration
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
 
 
 
@@ -499,18 +499,21 @@ syntax enable
 " Enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
+    colorscheme desert
 endif
 
-try
-    "colorscheme onedark
-    colorscheme monokai
-catch
-endtry
 
 set background=dark
 
 if has("gui_running")
   set lines=40 columns=140
+
+  try
+    "    colorscheme onedark
+    colorscheme monokai
+  catch
+  endtry
+
   if has("gui_gtk2")
     set guifont=Inconsolata\ 14
   elseif has("gui_macvim")
@@ -518,6 +521,10 @@ if has("gui_running")
   elseif has("gui_win32")
     set guifont=Consolas:h11:cANSI
   endif
+
+
+
+
 endif
 
 
@@ -747,4 +754,5 @@ autocmd! bufwritepost _vimrc source %
 
 command! Reloadvimrc source $MYVIMRC
 
-autocmd VimEnter * SyntasticToggleMode " disable syntastic by default
+" autocmd VimEnter * SyntasticToggleMode " disable syntastic by default
+
