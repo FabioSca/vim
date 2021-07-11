@@ -111,10 +111,36 @@ set ruler
 set number
 
 let no_buffers_menu=1
-silent! colorscheme molokai
 
 set mousemodel=popup
 set t_Co=256
+
+
+" indent/unindent with tab/shift-tab
+nmap <Tab> >>
+nmap <S-tab> <<
+imap <S-Tab> <Esc><<i
+vmap <Tab> >gv
+vmap <S-Tab> <gv
+
+
+" mouse
+set mouse=a
+let g:is_mouse_enabled = 1
+noremap <silent> <Leader>m :call ToggleMouse()<CR>
+function ToggleMouse()
+    if g:is_mouse_enabled == 1
+        echo "Mouse OFF"
+        set mouse=
+        let g:is_mouse_enabled = 0
+    else
+        echo "Mouse ON"
+        set mouse=a
+        let g:is_mouse_enabled = 1
+    endif
+endfunction
+
+
 
 " set gfn=Monospace\ 10
 
@@ -133,20 +159,24 @@ else
   let g:indentLine_faster = 1
 
   
-set t_Co=256
+  if $COLORTERM == 'gnome-terminal'
+    set term=gnome-256color
+  else
+    if $TERM == 'xterm'
+      set term=xterm-256color
+    endif
+  endif
   
 endif
 
-
-if &term =~ '256color'
-  set t_ut=
-endif
 
 
 "" Disable the blinking cursor.
 set gcr=a:blinkon0
 set scrolloff=3
 
+"" Status bar
+set laststatus=2
 
 "" Use modeline overrides
 set modeline
@@ -283,7 +313,7 @@ set nowrap "Wrap lines
 nmap <F3> :NERDTreeToggle<CR>
 
 " => Floaring term  {{{  
-" let g:floaterm_keymap_toggle = '<F4>'
+let g:floaterm_keymap_toggle = '<F4>'
 " }}}
   
 """"""""""""""""""""""""""""""
@@ -316,7 +346,7 @@ map <C-l> <C-W>l
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
 
 " Close all the buffers
-map <leader>ba :bufdo bd<cr>
+" map <leader>ba :bufdo bd<cr>
 
 map <leader>l :bnext<cr>
 map <leader>h :bprevious<cr>
@@ -450,6 +480,12 @@ endfunction
 let g:spacegray_underline_search = 1
 let g:spacegray_italicize_comments = 1
 
+" Vim-Airline Configuration
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1 
+let g:airline_theme='hybrid'
+let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast = 1 
 
 " Syntastic Configuration
 "set statusline+=%#warningmsg#
@@ -470,11 +506,11 @@ let g:pencil#wrapModeDefault = 'soft'   " default is 'hard'
 
 
 " Vim-pencil Configuration
-augroup pencil
-  autocmd!
-  autocmd FileType markdown,mkd call pencil#init()
-  autocmd FileType text         call pencil#init()
-augroup END
+" augroup pencil
+"   autocmd!
+"   autocmd FileType markdown,mkd call pencil#init()
+"   autocmd FileType text         call pencil#init()
+" augroup END
 
 
 " Vim-Test Configuration
@@ -496,11 +532,6 @@ endfunction
 " Enable syntax highlighting
 syntax enable 
 
-" Enable 256 colors palette in Gnome Terminal
-if $COLORTERM == 'gnome-terminal'
-    set t_Co=256
-    colorscheme desert
-endif
 
 
 set background=dark
@@ -688,6 +719,9 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 """""""""""""""""""""""""""
 
 " set pythondll=C:/Anaconda2/python27.dll
+
+set pythonhome=C:/Anaconda3/python
+set pythondll=C:/Anaconda3/python36.dll
 
 " let $PYTHONHOME = 'C:/Anaconda3/'
 
