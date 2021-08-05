@@ -384,7 +384,7 @@ q                   to close the quickfix window
 # PLUGINS > NERDTREE
 ##############################################################################
 
-
+:Nerdtree D:\
 :NERDTreeToggle     show / hide file browser
 :NERDTreeFind       show current file in file browser
 :Bookmark name      bookmark the current node as "name"
@@ -636,3 +636,8 @@ CTRL-y              go to next tag of attribute in sparkup plugin
 IMG<CR>             show image browser to insert image tag with src, width and height
 b                   insert image tag with dimensions from NERDTree 
                     (http://stackoverflow.com/questions/5707925/vim-image-placement)
+
+
+PYTHON 
+disabilitare check su alcune cards 
+# pylint: disable=line-too-long        

@@ -52,6 +52,7 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'romgrk/vimfiler-prompt'
 
+Plug 'voldikss/vim-floaterm'
 
 Plug 'majutsushi/tagbar', {'on':'TagbarToggle'}
 "Plug 'ervandew/supertab' " fa casino con jedi 

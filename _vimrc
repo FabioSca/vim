@@ -312,7 +312,13 @@ set nowrap "Wrap lines
 
 nmap <F3> :NERDTreeToggle<CR>
 
-" => Floaring term  {{{  
+" => Floaring term  {{{
+if has('windows')
+    let g:floaterm_shell = 'cmd /k ""D:\PROGRAMMI\cmder\vendor\init.bat" "'
+endif
+
+let g:floaterm_wintype = 'split'
+let g:floaterm_autoclose=2
 let g:floaterm_keymap_toggle = '<F4>'
 " }}}
   
@@ -720,8 +726,10 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
 " set pythondll=C:/Anaconda2/python27.dll
 
+if has('win32')
 set pythonhome=C:/Anaconda3/python
 set pythondll=C:/Anaconda3/python36.dll
+endif
 
 " let $PYTHONHOME = 'C:/Anaconda3/'
 
@@ -789,4 +797,3 @@ autocmd! bufwritepost _vimrc source %
 command! Reloadvimrc source $MYVIMRC
 
 " autocmd VimEnter * SyntasticToggleMode " disable syntastic by default
-
