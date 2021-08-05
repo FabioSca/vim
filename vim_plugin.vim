@@ -164,15 +164,18 @@ Plug 'crusoexia/vim-monokai'
 " Plug 'colepeters/spacemacs-theme.vim'
 
 " Python
+"
 
-" Use release branch (recommend)
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Or build from source code by using yarn: https://yarnpkg.com
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-
-" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-
+if has('win32')
+    
+    " Use release branch (recommend)
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    
+    " Or build from source code by using yarn: https://yarnpkg.com
+    Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+    
+    " Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+endif    
 
 
 
