@@ -46,7 +46,6 @@ Plug 'rking/ag.vim', { 'on': 'Ag' }
 
 " Utility
 "Plug 'scrooloose/nerdtree'
-" Plug 'ryanoasis/vim-devicons'  " va in conflitto con altri non accendere
 
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
@@ -134,8 +133,10 @@ Plug 'tinyheero/vim-myhelp' " Personal vim-cheatsheet
 " Theme / Interface
 " Plug 'AnsiEsc.vim'
 Plug 'ryanoasis/vim-devicons'
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
 " Plug 'sjl/badwolf'
 " Plug 'tomasr/molokai'
 " Plug 'morhetz/gruvbox'
@@ -148,10 +149,10 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'w0ng/vim-hybrid'
 " Plug 'AlessandroYorba/Sierra'
 Plug 'daylerees/colour-schemes'
-Plug 'sjl/badwolf'
-Plug 'chriskempson/base16-vim'
+" Plug 'sjl/badwolf'
+" Plug 'chriskempson/base16-vim'
 " Plug 'tomasiser/vim-code-dark'
-Plug 'mhartington/oceanic-next'
+" Plug 'mhartington/oceanic-next'
 
 
 " Atom One Dark theme.

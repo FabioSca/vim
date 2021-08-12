@@ -202,10 +202,10 @@ catch
 endtry
 
 " attenzione ho aggiunto un nuovo vim_mapping per scorciatoie
-try
-source ~/vim_main/vim_shortcuts.vim
-catch
-endtry
+" try
+" source ~/vim_main/vim_shortcuts.vim
+" catch
+" endtry
 
 
 try
@@ -277,7 +277,7 @@ set number
 
 " No annoying sound on errors
 set noerrorbells visualbell t_vb=
-autocmd GUIEnter * set visualbell t_vb=
+"autocmd GUIEnter * set visualbell t_vb=
 
 " Properly disable sound on errors on MacVim
 if has("gui_macvim")
@@ -483,15 +483,15 @@ endfunction
 
 
  
-let g:spacegray_underline_search = 1
-let g:spacegray_italicize_comments = 1
+"let g:spacegray_underline_search = 1
+"let g:spacegray_italicize_comments = 1
 
 " Vim-Airline Configuration
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1 
-let g:airline_theme='hybrid'
-let g:hybrid_custom_term_colors = 1
-let g:hybrid_reduced_contrast = 1 
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline_powerline_fonts = 1 
+"let g:airline_theme='hybrid'
+"let g:hybrid_custom_term_colors = 1
+"let g:hybrid_reduced_contrast = 1 
 
 " Syntastic Configuration
 "set statusline+=%#warningmsg#
@@ -541,22 +541,23 @@ syntax enable
 
 
 set background=dark
+colorscheme desert
 
 if has("gui_running")
   set lines=40 columns=140
 
   try
-    "    colorscheme onedark
-    colorscheme monokai
+   colorscheme onedark
+    " colorscheme monokai
   catch
   endtry
 
   if has("gui_gtk2")
-    set guifont=Inconsolata\ 14
+    set guifont=Inconsolata\ 15
   elseif has("gui_macvim")
-    set guifont=Menlo\ Regular:h14
+    set guifont=Menlo\ Regular:h15
   elseif has("gui_win32")
-    set guifont=Consolas:h11:cANSI
+    set guifont=Consolas:h12:cANSI
   endif
 
 

@@ -1,0 +1,2 @@
+"C:\Program Files (x86)\Google\Chrome\Application\chrome_proxy.exe"  --profile-directory="Profile 2" --app-id=igjpifhenpcnpbeiknildfkfbfnddgpi
+"D:\PROGRAMMI\scoop\apps\brave\current\brave.exe" --profile-directory=Default --app-id=igjpifhenpcnpbeiknildfkfbfnddgpi

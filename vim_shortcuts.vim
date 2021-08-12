@@ -7,8 +7,8 @@ runtime plugin/shortcut.vim
 
 " mappings {{{
   " Map shortcuts
-  Shortcut show shortcut menu and run chosen shortcut
-  \ noremap <silent> <Leader><Leader> :Shortcuts<Return>
+"  Shortcut show shortcut menu and run chosen shortcut
+"  \ noremap <silent> <Leader><Leader> :Shortcuts<Return>
 "  Shortcut fallback to shortcut menu on partial entry
 "  \ noremap <silent> <Leader> :Shortcuts<Return>
   

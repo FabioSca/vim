@@ -189,95 +189,95 @@ endif
 
 " vim-airline
 "" airline configuration {{{
-
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#branch#vcs_priority = ["git"]
-
-let g:airline_powerline_fonts = 0
-let g:airline_detect_spell=0
-
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-" unicode symbols
-"let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-"let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.crypt = '🔒'
-"let g:airline_symbols.linenr = '␊'
-"let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.maxlinenr = '☰'
-"let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.branch = '⎇'
-"let g:airline_symbols.paste = 'ρ'
-"let g:airline_symbols.paste = 'Þ'
-"let g:airline_symbols.paste = '∥'
-let g:airline_symbols.paste = 'PASTE'
-let g:airline_symbols.spell = 'Ꞩ'
-let g:airline_symbols.notexists = '∄'
-let g:airline_symbols.whitespace = 'Ξ'
-
-"" powerline symbols
-"let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-"let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-"let g:airline_symbols.branch = ''
-"let g:airline_symbols.readonly = ''
-"let g:airline_symbols.linenr = ''
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-""-let g:airline_theme = 'powerlineish'
-""---let g:airline#extensions#branch#enabled = 1
-""---let g:airline#extensions#ale#enabled = 1
-""---let g:airline#extensions#tabline#enabled = 1
-""---let g:airline#extensions#tagbar#enabled = 1
-""---let g:airline_skip_empty_sections = 1
-
-" " Vim-Airline Configuration
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline_powerline_fonts = 1 
-" let g:airline_theme='hybrid'
-" let g:hybrid_custom_term_colors = 1
-" let g:hybrid_reduced_contrast = 1 
-
-" vim-airline
-""-- if !exists('g:airline_symbols')
-""--   let g:airline_symbols = {}
-""-- endif
-""-- 
-""-- if !exists('g:airline_powerline_fonts')
-""--   let g:airline#extensions#tabline#left_sep = ' '
-""--   let g:airline#extensions#tabline#left_alt_sep = '|'
-""--   let g:airline_left_sep          = '▶'
-""--   let g:airline_left_alt_sep      = '»'
-""--   let g:airline_right_sep         = '◀'
-""--   let g:airline_right_alt_sep     = '«'
-""--   let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
-""--   let g:airline#extensions#readonly#symbol   = '⊘'
-""--   let g:airline#extensions#linecolumn#prefix = '¶'
-""--   let g:airline#extensions#paste#symbol      = 'ρ'
-""--   let g:airline_symbols.linenr    = '␊'
-""--   let g:airline_symbols.branch    = '⎇'
-""--   let g:airline_symbols.paste     = 'ρ'
-""--   let g:airline_symbols.paste     = 'Þ'
-""--   let g:airline_symbols.paste     = '∥'
-""--   let g:airline_symbols.whitespace = 'Ξ'
-""-- else
-""--   let g:airline#extensions#tabline#left_sep = ''
-""--   let g:airline#extensions#tabline#left_alt_sep = ''
-""-- 
-""--   " powerline symbols
-""--   let g:airline_left_sep = ''
-""--   let g:airline_left_alt_sep = ''
-""--   let g:airline_right_sep = ''
-""--   let g:airline_right_alt_sep = ''
-""--   let g:airline_symbols.branch = ''
-""--   let g:airline_symbols.readonly = ''
-""--   let g:airline_symbols.linenr = ''
-""-- endif
+" fabio 
+" fabio let g:airline#extensions#branch#enabled = 1
+" fabio let g:airline#extensions#branch#vcs_priority = ["git"]
+" fabio 
+" fabio let g:airline_powerline_fonts = 0
+" fabio let g:airline_detect_spell=0
+" fabio 
+" fabio if !exists('g:airline_symbols')
+" fabio   let g:airline_symbols = {}
+" fabio endif
+" fabio " unicode symbols
+" fabio "let g:airline_left_sep = '»'
+" fabio let g:airline_left_sep = '▶'
+" fabio "let g:airline_right_sep = '«'
+" fabio let g:airline_right_sep = '◀'
+" fabio let g:airline_symbols.crypt = '🔒'
+" fabio "let g:airline_symbols.linenr = '␊'
+" fabio "let g:airline_symbols.linenr = '␤'
+" fabio let g:airline_symbols.linenr = '¶'
+" fabio let g:airline_symbols.maxlinenr = '☰'
+" fabio "let g:airline_symbols.maxlinenr = ''
+" fabio let g:airline_symbols.branch = '⎇'
+" fabio "let g:airline_symbols.paste = 'ρ'
+" fabio "let g:airline_symbols.paste = 'Þ'
+" fabio "let g:airline_symbols.paste = '∥'
+" fabio let g:airline_symbols.paste = 'PASTE'
+" fabio let g:airline_symbols.spell = 'Ꞩ'
+" fabio let g:airline_symbols.notexists = '∄'
+" fabio let g:airline_symbols.whitespace = 'Ξ'
+" fabio 
+" fabio "" powerline symbols
+" fabio "let g:airline_left_sep = ''
+" fabio let g:airline_left_alt_sep = ''
+" fabio "let g:airline_right_sep = ''
+" fabio let g:airline_right_alt_sep = ''
+" fabio "let g:airline_symbols.branch = ''
+" fabio "let g:airline_symbols.readonly = ''
+" fabio "let g:airline_symbols.linenr = ''
+" fabio let g:airline#extensions#tabline#enabled = 1
+" fabio let g:airline_powerline_fonts = 1
+" fabio ""-let g:airline_theme = 'powerlineish'
+" fabio ""---let g:airline#extensions#branch#enabled = 1
+" fabio ""---let g:airline#extensions#ale#enabled = 1
+" fabio ""---let g:airline#extensions#tabline#enabled = 1
+" fabio ""---let g:airline#extensions#tagbar#enabled = 1
+" fabio ""---let g:airline_skip_empty_sections = 1
+" fabio 
+" fabio " " Vim-Airline Configuration
+" fabio " let g:airline#extensions#tabline#enabled = 1
+" fabio " let g:airline_powerline_fonts = 1 
+" fabio " let g:airline_theme='hybrid'
+" fabio " let g:hybrid_custom_term_colors = 1
+" fabio " let g:hybrid_reduced_contrast = 1 
+" fabio 
+" fabio " vim-airline
+" fabio ""-- if !exists('g:airline_symbols')
+" fabio ""--   let g:airline_symbols = {}
+" fabio ""-- endif
+" fabio ""-- 
+" fabio ""-- if !exists('g:airline_powerline_fonts')
+" fabio ""--   let g:airline#extensions#tabline#left_sep = ' '
+" fabio ""--   let g:airline#extensions#tabline#left_alt_sep = '|'
+" fabio ""--   let g:airline_left_sep          = '▶'
+" fabio ""--   let g:airline_left_alt_sep      = '»'
+" fabio ""--   let g:airline_right_sep         = '◀'
+" fabio ""--   let g:airline_right_alt_sep     = '«'
+" fabio ""--   let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
+" fabio ""--   let g:airline#extensions#readonly#symbol   = '⊘'
+" fabio ""--   let g:airline#extensions#linecolumn#prefix = '¶'
+" fabio ""--   let g:airline#extensions#paste#symbol      = 'ρ'
+" fabio ""--   let g:airline_symbols.linenr    = '␊'
+" fabio ""--   let g:airline_symbols.branch    = '⎇'
+" fabio ""--   let g:airline_symbols.paste     = 'ρ'
+" fabio ""--   let g:airline_symbols.paste     = 'Þ'
+" fabio ""--   let g:airline_symbols.paste     = '∥'
+" fabio ""--   let g:airline_symbols.whitespace = 'Ξ'
+" fabio ""-- else
+" fabio ""--   let g:airline#extensions#tabline#left_sep = ''
+" fabio ""--   let g:airline#extensions#tabline#left_alt_sep = ''
+" fabio ""-- 
+" fabio ""--   " powerline symbols
+" fabio ""--   let g:airline_left_sep = ''
+" fabio ""--   let g:airline_left_alt_sep = ''
+" fabio ""--   let g:airline_right_sep = ''
+" fabio ""--   let g:airline_right_alt_sep = ''
+" fabio ""--   let g:airline_symbols.branch = ''
+" fabio ""--   let g:airline_symbols.readonly = ''
+" fabio ""--   let g:airline_symbols.linenr = ''
+" fabio ""-- endif
 " }}}
 
 
