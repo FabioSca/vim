@@ -13,6 +13,8 @@ catch
 endtry
 
 
+
+
 "try
 "source ~/vim_main/vim_guide.vim
 "catch
@@ -144,30 +146,7 @@ endfunction
 
 " set gfn=Monospace\ 10
 
-if has("gui_running")
-  if has("gui_mac") || has("gui_macvim")
-    set guifont=Menlo:h12
-    set transparency=7
-  endif
-else
-  let g:CSApprox_loaded = 1
 
-  " IndentLine
-  let g:indentLine_enabled = 1
-  let g:indentLine_concealcursor = 0
-  let g:indentLine_char = '?'
-  let g:indentLine_faster = 1
-
-  
-  if $COLORTERM == 'gnome-terminal'
-    set term=gnome-256color
-  else
-    if $TERM == 'xterm'
-      set term=xterm-256color
-    endif
-  endif
-  
-endif
 
 
 
@@ -314,7 +293,7 @@ nmap <F3> :NERDTreeToggle<CR>
 
 " => Floaring term  {{{
 if has('windows')
-    let g:floaterm_shell = 'cmd /k ""D:\PROGRAMMI\cmder\vendor\init.bat" "'
+    let g:floaterm_shell = 'cmd /k ""D:\PROGRAMMI\scoop\apps\cmder\current\vendor\init.bat" "'
 endif
 
 let g:floaterm_wintype = 'split'
@@ -546,11 +525,7 @@ colorscheme desert
 if has("gui_running")
   set lines=40 columns=140
 
-  try
-   colorscheme onedark
-    " colorscheme monokai
-  catch
-  endtry
+
 
   if has("gui_gtk2")
     set guifont=Inconsolata\ 15
@@ -561,9 +536,17 @@ if has("gui_running")
   endif
 
 
+  try
+   colorscheme onedark
+    " colorscheme monokai
+  catch
+  endtry
+
+
 
 
 endif
+nmap <F2> :colorscheme onedark<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -798,3 +781,5 @@ autocmd! bufwritepost _vimrc source %
 command! Reloadvimrc source $MYVIMRC
 
 " autocmd VimEnter * SyntasticToggleMode " disable syntastic by default
+"
+
