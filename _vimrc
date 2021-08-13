@@ -12,7 +12,31 @@ source ~/vim_main/vim_plugin.vim
 catch
 endtry
 
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+let mapleader = ","
+let maplocalleader = "\<Space>"
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => PLUGIN COMMAND
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+try
+source ~/vim_main/vim_plugin_command.vim
+catch
+endtry
+
+" attenzione ho aggiunto un nuovo vim_mapping per scorciatoie
+" try
+" source ~/vim_main/vim_shortcuts.vim
+" catch
+" endtry
+
+
+try
+source ~/vim_main/vim_mappings.vim
+catch
+endtry
 
 
 "try
@@ -82,10 +106,7 @@ set history=500
 " Set to auto read when a file is changed from the outside
 " set autoread
 
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader = ","
-let maplocalleader = "\<Space>"
+
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -146,7 +167,30 @@ endfunction
 
 " set gfn=Monospace\ 10
 
+if has("gui_running")
+  if has("gui_mac") || has("gui_macvim")
+    set guifont=Menlo:h12
+    set transparency=7
+  endif
+else
+  let g:CSApprox_loaded = 1
 
+  " IndentLine
+  let g:indentLine_enabled = 1
+  let g:indentLine_concealcursor = 0
+  let g:indentLine_char = '?'
+  let g:indentLine_faster = 1
+
+  
+  if $COLORTERM == 'gnome-terminal'
+    set term=gnome-256color
+  else
+    if $TERM == 'xterm'
+      set term=xterm-256color
+    endif
+  endif
+  
+endif
 
 
 
@@ -163,34 +207,7 @@ set modelines=10
 
 
 
-" Search mappings: These will make it so that going to the next one in a
-" search will center on the line it's found in.
-"nnoremap n nzzzv
-"nnoremap N Nzzzv
 
-
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => PLUGIN COMMAND
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-try
-source ~/vim_main/vim_plugin_command.vim
-catch
-endtry
-
-" attenzione ho aggiunto un nuovo vim_mapping per scorciatoie
-" try
-" source ~/vim_main/vim_shortcuts.vim
-" catch
-" endtry
-
-
-try
-source ~/vim_main/vim_mappings.vim
-catch
-endtry
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -257,12 +274,6 @@ set number
 " No annoying sound on errors
 set noerrorbells visualbell t_vb=
 "autocmd GUIEnter * set visualbell t_vb=
-
-" Properly disable sound on errors on MacVim
-if has("gui_macvim")
-    autocmd GUIEnter * set vb t_vb=
-endif
-
 
 " Add a bit extra margin to the left
 set foldcolumn=2
@@ -341,7 +352,7 @@ map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
-map <leader>t<leader> :tabnext 
+map <leader>t :tabnext<cr>
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
@@ -462,15 +473,15 @@ endfunction
 
 
  
-"let g:spacegray_underline_search = 1
-"let g:spacegray_italicize_comments = 1
+let g:spacegray_underline_search = 1
+let g:spacegray_italicize_comments = 1
 
 " Vim-Airline Configuration
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline_powerline_fonts = 1 
-"let g:airline_theme='hybrid'
-"let g:hybrid_custom_term_colors = 1
-"let g:hybrid_reduced_contrast = 1 
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1 
+let g:airline_theme='hybrid'
+let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast = 1 
 
 " Syntastic Configuration
 "set statusline+=%#warningmsg#
@@ -498,11 +509,6 @@ let g:pencil#wrapModeDefault = 'soft'   " default is 'hard'
 " augroup END
 
 
-" Vim-Test Configuration
-" let test#strategy = "vimux"
-
-
-
 function! s:my_cr_function()
   return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
   " For no inserting <CR> key.
@@ -520,27 +526,23 @@ syntax enable
 
 
 set background=dark
-colorscheme desert
 
 if has("gui_running")
   set lines=40 columns=140
 
-
-
-  if has("gui_gtk2")
-    set guifont=Inconsolata\ 15
-  elseif has("gui_macvim")
-    set guifont=Menlo\ Regular:h15
-  elseif has("gui_win32")
-    set guifont=Consolas:h12:cANSI
-  endif
-
-
   try
-   colorscheme onedark
+       colorscheme onedark
     " colorscheme monokai
   catch
   endtry
+
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 14
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h14
+  elseif has("gui_win32")
+    set guifont=Consolas:h11:cANSI
+  endif
 
 
 
@@ -781,5 +783,3 @@ autocmd! bufwritepost _vimrc source %
 command! Reloadvimrc source $MYVIMRC
 
 " autocmd VimEnter * SyntasticToggleMode " disable syntastic by default
-"
-
