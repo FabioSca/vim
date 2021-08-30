@@ -192,7 +192,7 @@ endif
 " endif
 
 " Plug 'Valloric/YouCompleteMe'  "meglio non usarlo in Windows
-Plug 'davidhalter/jedi-vim'
+" Plug 'davidhalter/jedi-vim'
 " Plug 'ycm-core/YouCompleteMe'
 
 
