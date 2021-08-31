@@ -291,6 +291,11 @@ CTRL-w >            decrease window width
 CTRL-w =            equal window
 CTRL-w o            close other windows
 
+rimappato:
+map <C-+> <C-W>+
+map <C--> <C-W>-
+map + <C-W>>
+map - <C-W><
 
 ##############################################################################
 # QUICKFIX WINDOW
@@ -323,26 +328,15 @@ CTRL-o              move to previous position you were at
 CTRL-i              move to more recent position you were at
 
 
-##############################################################################
-# PLUGINS > ACK
-##############################################################################
-
-
-:Ack                Search recursively in directory
-o                   to open (same as enter)
-go                  to preview file (open but maintain focus on ack.vim results)
-t                   to open in new tab
-T                   to open in new tab silently
-q                   to close the quickfix window
-
 
 ##############################################################################
-# PLUGINS > CHEAT
+   search in files in folder 
 ##############################################################################
 
-
-:Cheat              open cheat sheet (with autocomplete)
-<leader>ch          open cheat sheet for word under the cursor
+:vimgrep /cerca/gj *
+poi per muoverti
+:cn 
+:cwindow   per vederli tutti
 
 
 ##############################################################################
@@ -475,19 +469,7 @@ vees'               surround 2 words (ee) with quotes '
 # PLUGINS > TABULAR
 ##############################################################################
 
-
-:Tabularize /,      line the selected lines up on the commas
-
-
-##############################################################################
-# PLUGINS > TAGLIST
-##############################################################################
-
-
-:TlistToggle        open / close taglist window
-<enter>             jump to tag or file
-<space>             display the tag prototype
-
+:TagbarToggle   # Attiva e disattiva toggle tag anche con F8
 
 ##############################################################################
 # PLUGINS > UNIMPAIRED
@@ -596,8 +578,6 @@ CTRL-l              go to right window
 <leader><up>        bubble line(s) up
 <leader><down>      bublle line(s) down
 
-:Ltag               load tags file
-:Project            cd to project and load tags file
 <leader>t           show current tag for word under cursor
 <leader>st          show current tag for word under cursor in split window
 <leader>tj          show current tag list for word under cursor
@@ -621,8 +601,6 @@ CTRL-p              generate PHP DOC
 <leader>N           close Nerdtree
 <leader>f           find current file in Nerdtree
 
-<leader>l           toggle Taglist
-<leader>L           close Taglist
 
 <leader>ph          set filetype to php.html
 <leader>r           reload all snipmate snippets
@@ -641,3 +619,6 @@ b                   insert image tag with dimensions from NERDTree
 PYTHON 
 disabilitare check su alcune cards 
 # pylint: disable=line-too-long        
+
+
+
