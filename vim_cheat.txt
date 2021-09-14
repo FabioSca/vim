@@ -366,19 +366,10 @@ poi per muoverti
 
 
 ##############################################################################
-# PLUGINS > NERDCOMMENTER
-##############################################################################
-
-
-<leader>cc          comment out line(s)
-<leader>c<space>    toggle the comment state of the selected line(s)
-
-
-##############################################################################
 # PLUGINS > NERDTREE
 ##############################################################################
 
-:Nerdtree D:\
+:NERDTree D:\
 :NERDTreeToggle     show / hide file browser
 :NERDTreeFind       show current file in file browser
 :Bookmark name      bookmark the current node as "name"
@@ -568,7 +559,7 @@ CTRL-l              go to right window
 :Wrap               wrap text
 <F2>                toggle wrapped text
 
-<F3>                toggle spell check
+<F3>                toggle NERDTree
 
 <F4>                toggle light/dark background
 
@@ -620,5 +611,23 @@ PYTHON
 disabilitare check su alcune cards 
 # pylint: disable=line-too-long        
 
+# SOL 400 e NASTRAN cards
+param, CDBMSG05,-2 
+MDLPRM,NLDIAG,10
 
+MDLPRM
+NLSTEP
+NLOPRM
+
+
+PARAM,GRDPNT,0
+
+AUTOSPC(NOPRINT)=YES
+
+# SOL 700 card 
+Esempio file sol700.pth 
+/msc/MSC_Nastran/20122/msc20122/dyna/linux64/run_dytran
+nproc=4
+memory=400M
+dbl=yes
 
