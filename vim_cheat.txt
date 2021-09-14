@@ -487,7 +487,7 @@ vees'               surround 2 words (ee) with quotes '
 :Git                run a git command
 
 :Git commit -a -m "ciao"
-:Gpush          " f  12345
+:Git push          " f  12345
 
 :Gstatus            git status : - to (un)stage , p to patch, C to commit
 :Gcommit            git commit
