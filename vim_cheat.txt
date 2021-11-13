@@ -1,7 +1,5 @@
 ##############################################################################
 # VIM CHEATSHEET
-# WEBSITE: http://www.vim.org/  
-# DOCUMENTATION: https://vim.sourceforge.io/docs.php
 ##############################################################################
 
 
@@ -14,6 +12,7 @@ h                   move left
 j                   move down
 k                   move up
 l                   move right
+
 w                   jump by start of words (punctuation considered words)
 W                   jump by words (spaces separate words)
 e                   jump to end of words (punctuation considered words)
@@ -21,29 +20,36 @@ E                   jump to end of words (no punctuation)
 b                   jump backward by words (punctuation considered words)
 B                   jump backward by words (no punctuation)
 ge                  jump backward to end of words
+
 0                   (zero) start of line
 ^                   first non-blank character of line
 $                   end of line
+
 -                   move line upwards, on the first non blank character
 +                   move line downwards, on the first non blank character
 <enter>             move line downwards, on the first non blank character
+
 gg                  go to first line
 G                   go to last line
 nG                  go To line n
 :n                  go To line n
+
 )                   move the cursor forward to the next sentence.
 (                   move the cursor backward by a sentence.
 {                   move the cursor a paragraph backwards
 }                   move the cursor a paragraph forwards
 ]]                  move the cursor a section forwards or to the next {
 [[                  move the cursor a section backwards or the previous {
+
 CTRL-f              move the cursor forward by a screen of text
 CTRL-b              move the cursor backward by a screen of text
 CTRL-u              move the cursor up by half a screen
 CTRL-d              move the cursor down by half a screen
+
 H                   move the cursor to the top of the screen.
 M                   move the cursor to the middle of the screen.
 L                   move the cursor to the bottom of the screen.
+
 fx                  search line forward for 'x'
 Fx                  search line backward for 'x'
 tx                  search line forward before 'x'
@@ -89,10 +95,12 @@ cw                  change (replace) to the end of word
 C                   change (replace) to the end of line
 s                   delete character at cursor and substitute text
 S                   delete line at cursor and substitute text (same as cc)
-xp                  transpose two letters (delete and paste, technically)
+
 u                   undo
 CTRL-r              redo
+
 .                   repeat last command
+
 ~                   switch case
 g~iw                switch case of current word
 gUiw                make current word uppercase
@@ -107,6 +115,8 @@ ddkp                swap current line with previous
 :%retab             fix spaces / tabs issues in whole file
 :r [name]           insert the file [name] below the cursor.
 :r !{cmd}           execute {cmd} and insert its standard output below the cursor.
+
+xp                  transpose two letters (delete and paste, technically)
 
 
 ##############################################################################
@@ -170,16 +180,26 @@ q                   end recording macro
 
 v                   start visual mode, mark lines, then do command (such as y-yank)
 V                   start linewise visual mode
+CTRL-v              start visual block mode
+
 o                   move to other end of marked area
 U                   upper case of marked area
-CTRL-v              start visual block mode
 O                   move to other corner of block
 aw                  mark a word
 ab                  a () block (with braces)
 ab                  a {} block (with brackets)
 ib                  inner () block
 ib                  inner {} block
+
 Esc                 exit visual mode
+
+##############################################################################
+#  FOLD 
+##############################################################################
+
+zf  selezioni qualcosa e accoppi le righe
+zo  espande le righe dei esserci sopra
+
 
 VISUAL MODE COMMANDS
 --------------------
@@ -207,18 +227,6 @@ per scrivere su un file i comandi shortcut mappati
 :redir END
 
 ##############################################################################
-# SPELLING
-##############################################################################
-
-
-]s                  next misspelled word
-[s                  previous misspelled word
-zg                  add word to wordlist
-zug                 undo last add word
-z=                  suggest word
-
-
-##############################################################################
 # EXITING
 ##############################################################################
 
@@ -242,12 +250,18 @@ ZQ                  quit current file and exit (same as ":q!").
 
 /pattern                    search for pattern
 ?pattern                    search backward for pattern
+
 n                           repeat search in same direction
 N                           repeat search in opposite direction
 *                           search forward, word under cursor
 #                           search backward, word under cursor
+
+:%s/old/new               replace all old with new solo la prima occorenza di old se metti g in tutto il file
 :%s/old/new/g               replace all old with new throughout file
 :%s/old/new/gc              replace all old with new throughout file with confirmation
+:5,7s/old/new/gc              replace nelle righe tra 5,7 chiedendo conferma per via del c 
+:5,7s/old/new/gic              replace nelle righe tra 5,7 chiedendo conferma per via del c ignorando il caso
+:5,7s/old/new/gIc              replace nelle righe tra 5,7 chiedendo conferma per via del c senza ignorare il caso
 :argdo %s/old/new/gc | wq   open multiple files and run this command to replace old 
                             with new in every file with confirmation, save and quit
 
@@ -258,6 +272,7 @@ N                           repeat search in opposite direction
 
 
 :e filename         edit a file in a new buffer
+:read filename      lo apre in read mode
 :tabe filename      edit a file in a new tab (Vim7, gVim)
 :ls                 list all buffers
 :bn                 go to next buffer
@@ -276,6 +291,7 @@ N                           repeat search in opposite direction
 :vsp f              vsplit open f
 CTRL-w CTRL-w       muoviti ciclicamente tra le finestre FABIO
 CTRL-w s            split windows
+
 CTRL-w w            switch between windows
 CTRL-w q            quit a window
 CTRL-w v            split windows vertically
