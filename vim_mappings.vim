@@ -127,7 +127,6 @@ let g:which_key_map['n'] = {
     \ }
 " }}}
 
-"    \ 'r'    : [':silent ! start cmd /k C:\MSC.Software\lancia_nastran.bat % %:p:h <CR>'    , 'RUN'                        ]
 
 " VCS: <leader>+v+{a,P,f,p,s,c,b,l,d} {{{
 let g:which_key_map['g'] = {

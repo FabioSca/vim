@@ -29,8 +29,10 @@ call plug#begin('~/.vim/plugged')
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
+" Plug 'preservim/nerdcommenter'
 "Plug 'OrangeT/vim-csharp', {'for':'cs'}
 let g:vue_pre_processors = []
 
@@ -45,7 +47,6 @@ Plug 'rking/ag.vim', { 'on': 'Ag' }
 
 
 " Utility
-"Plug 'scrooloose/nerdtree'
 
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
@@ -98,7 +99,7 @@ Plug 'universal-ctags/ctags'
 " Plug 'honza/vim-snippets'
 " Plug 'Townk/vim-autoclose'      " no serve progetto chiuso
 " Plug 'Raimondi/delimitMate'     " chiude le parentesi
-" Plug 'tomtom/tcomment_vim'        " commenta e toglie commenti con shortcut
+" Plug 'tomtom/tcomment_vim'        " commenta e toglie commenti con shortcut non funziona bene con Python
 " Plug 'janko-m/vim-test'         " lancia test
 " Plug 'maksimr/vim-jsbeautify'   " javascript
 " Plug 'vim-syntastic/syntastic'
@@ -132,7 +133,6 @@ Plug 'tinyheero/vim-myhelp' " Personal vim-cheatsheet
 
 " Theme / Interface
 " Plug 'AnsiEsc.vim'
-Plug 'ryanoasis/vim-devicons'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'

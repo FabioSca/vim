@@ -191,6 +191,12 @@ ab                  a {} block (with brackets)
 ib                  inner () block
 ib                  inner {} block
 
+ip  vip             seleziona il paragrafo 
+
+:sort               ordina quello selezionato
+
+"*y                  yanks the currently selected lines to the * register which is the clipboard.
+
 Esc                 exit visual mode
 
 ##############################################################################
@@ -206,6 +212,7 @@ VISUAL MODE COMMANDS
 
 >                   shift right
 <                   shift left
+
 c                   change (replace) marked text
 y                   yank (copy) marked text
 d                   delete marked text
@@ -218,6 +225,9 @@ v%                  selects matching parenthesis
 vi{                 selects matching curly brace
 vi"                 selects text between double quotes
 vi'                 selects text between single quotes
+
+ve              seleziona la parola corrente 
+*  se in visual cerca occorenza della selezione
 
 MAPS
 per scrivere su un file i comandi shortcut mappati
@@ -251,10 +261,11 @@ ZQ                  quit current file and exit (same as ":q!").
 /pattern                    search for pattern
 ?pattern                    search backward for pattern
 
-n                           repeat search in same direction
-N                           repeat search in opposite direction
 *                           search forward, word under cursor
 #                           search backward, word under cursor
+
+n                           repeat search in same direction
+N                           repeat search in opposite direction
 
 :%s/old/new               replace all old with new solo la prima occorenza di old se metti g in tutto il file
 :%s/old/new/g               replace all old with new throughout file
@@ -265,9 +276,37 @@ N                           repeat search in opposite direction
 :argdo %s/old/new/gc | wq   open multiple files and run this command to replace old 
                             with new in every file with confirmation, save and quit
 
+:%s/cerca//ng        dice quante volte compare conta count
 
 ##############################################################################
-# MULTIPLE FILES
+   search in files in folder 
+usando vimgrep si può cercare nei files o nella cartella e poi copen si vede
+##############################################################################
+
+:vimgrep /cerca/gj *    nella cartella corrente
+:vimgrep /cerca/g *    nel buffer corrente
+poi per muoverti
+:cn 
+:cwindow   per vederli tutti
+
+##############################################################################
+# QUICKFIX WINDOW usando vimgrep si può cercare nei files o nella cartella e poi copen si vede
+##############################################################################
+
+
+copen               open quickfix window
+cclose              close quickfix window
+cc [nr]             display error [nr]
+cfirst              display the first error
+clast               display the last error
+[count]cn           display [count] next error
+[count]cp           display [count] previous error
+
+
+
+
+##############################################################################
+# MULTIPLE FILES buffers tabs
 ##############################################################################
 
 
@@ -313,22 +352,6 @@ map <C--> <C-W>-
 map + <C-W>>
 map - <C-W><
 
-##############################################################################
-# QUICKFIX WINDOW
-##############################################################################
-
-
-copen               open quickfix window
-cclose              close quickfix window
-cc [nr]             display error [nr]
-cfirst              display the first error
-clast               display the last error
-[count]cn           display [count] next error
-[count]cp           display [count] previous error
-
-
-:%s/cerca//ng        dice quante volte compare conta count
-
 
 ##############################################################################
 # PROGRAMMING
@@ -342,43 +365,6 @@ gd                  when the cursor is on a local variable or function, jump to 
 gi                  return to insert mode where you inserted text the last time
 CTRL-o              move to previous position you were at
 CTRL-i              move to more recent position you were at
-
-
-
-##############################################################################
-   search in files in folder 
-##############################################################################
-
-:vimgrep /cerca/gj *
-poi per muoverti
-:cn 
-:cwindow   per vederli tutti
-
-
-##############################################################################
-# PLUGINS > GIST
-##############################################################################
-
-
-:Gist               post whole text to gist
-:Gist XXXXX         get gist XXXXX
-:Gist -l            list my gists
-
-
-##############################################################################
-# PLUGINS > GUNDO
-##############################################################################
-
-
-:GundoToggle        show undo tree
-
-
-##############################################################################
-# PLUGINS > LUSTYJUGGLER
-##############################################################################
-
-
-<Leader>lj          show open buffers
 
 
 ##############################################################################
@@ -517,31 +503,19 @@ vees'               surround 2 words (ee) with quotes '
 :Gbrowse            open github
 
 
-##############################################################################
-# PLUGINS > VIM-PEEPOPEN
-##############################################################################
-
-
-<Leader>p           open the current directory with the peepopen application (fuzzy search)
-
-
-##############################################################################
-# PLUGINS > VIM-SYMFONY
+###############################################################################
+# FZF
 ##############################################################################
 
+:Files is for finding files by name. FZF 
+:Rg uses Ripgrep to search for content in files, so you can search for a specific string. 
+:Snippets works with Ultisnips to provide a filterable list of available snippets you can insert, making it much more useful
+:Tags allows you to filter and search tags in the project as a whole
+:BTags does the same, but solely in the current buffer
+:Lines allows you to find lines in the project and navigate to them.
+:BLines does the same, but solely in the current buffer.
 
-:Sview              open template file
-:Saction            open action file
-:Smodel             open model file
-:Sfilter            open filter file
-:Sform              open form file
-:Spartial           open partial file / write selected content in partial + include
-:Scomponent         open component file / write selected content in component + include
-:Salternate         open alternate model file (class - table class)
-:Symfony            execute task
-
-
-##############################################################################
+#############################################################################
 # PERSONAL .VIMRC
 ##############################################################################
 
@@ -590,12 +564,10 @@ CTRL-l              go to right window
 <leader>tj          show current tag list for word under cursor
 <leader>stj         show current tag list for word under cursor in split window
 
-CTRL-<space>        show omnicomplete menu
+CTRL-<space>        show autocomplete menu
 
 <leader>b           surround with strong tags
 <leader>i           surround with em tags
-
-CTRL-p              generate PHP DOC
 
 <leader>a           run Ack
 
@@ -616,8 +588,6 @@ CTRL-<tab>          switch between buffers
 
 CTRL-y              go to next tag of attribute in sparkup plugin
 
-<leader>g           toggle Gundo window
-
 IMG<CR>             show image browser to insert image tag with src, width and height
 b                   insert image tag with dimensions from NERDTree 
                     (http://stackoverflow.com/questions/5707925/vim-image-placement)
@@ -627,7 +597,8 @@ PYTHON
 disabilitare check su alcune cards 
 # pylint: disable=line-too-long        
 
-# SOL 400 e NASTRAN cards
+# SOL 400 e NASTRAN cards 
+# cdbmsg per corpi di contatto only
 param, CDBMSG05,-2 
 MDLPRM,NLDIAG,10
 

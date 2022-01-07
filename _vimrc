@@ -630,9 +630,6 @@ let g:ag_working_path_mode= get(g:, 'ag_working_path_mode', 'r')
 " let g:fzf_layout = { 'window': 'enew' }
 " let g:fzf_layout = { 'window': '-tabnew' }
 " 
-" " Enable highlighting of the current line
-" set cursorline
-" 
 " " Customize fzf colors to match your color scheme
 " let g:fzf_colors =
 " \ { 'fg':      ['fg', 'Normal'],
@@ -654,9 +651,9 @@ let g:ag_working_path_mode= get(g:, 'ag_working_path_mode', 'r')
 " " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
 " let g:fzf_history_dir = '~/.local/share/fzf-history'
 " 
-" """""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""
 " " Mappings configurationn
-" """""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""
 " 
 " 
 " 
