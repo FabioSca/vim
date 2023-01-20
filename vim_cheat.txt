@@ -36,15 +36,21 @@ nG                  go To line n
 
 )                   move the cursor forward to the next sentence.
 (                   move the cursor backward by a sentence.
+
+
+{ per fare il sonbolo della graffa AltGR-Shift-[ 
+} per fare il sonbolo della graffa AltGR-Shift-] 
+
 {                   move the cursor a paragraph backwards
 }                   move the cursor a paragraph forwards
+
 ]]                  move the cursor a section forwards or to the next {
 [[                  move the cursor a section backwards or the previous {
 
-CTRL-f              move the cursor forward by a screen of text
-CTRL-b              move the cursor backward by a screen of text
-CTRL-u              move the cursor up by half a screen
-CTRL-d              move the cursor down by half a screen
+# CTRL-f    rimappato plugins           move the cursor forward by a screen of text
+# CTRL-b    rimappato plugins           move the cursor backward by a screen of text
+# CTRL-u    rimappato plugins           move the cursor up by half a screen
+# CTRL-d    rimappato plugins           move the cursor down by half a screen
 
 H                   move the cursor to the top of the screen.
 M                   move the cursor to the middle of the screen.
@@ -89,10 +95,16 @@ Esc                 exit insert mode
 
 r                   replace a single character (does not use insert mode)
 R                   enter Insert mode, replacing characters rather than inserting
+
 J                   join line below to the current one
+
 cc                  change (replace) an entire line
 cw                  change (replace) to the end of word
+ci)                 cancella tra parentesi
+ci"                 cancella tra " "
+
 C                   change (replace) to the end of line
+
 s                   delete character at cursor and substitute text
 S                   delete line at cursor and substitute text (same as cc)
 
@@ -101,7 +113,8 @@ CTRL-r              redo
 
 .                   repeat last command
 
-~                   switch case
+~                   switch case  alt-1-2-6  
+
 g~iw                switch case of current word
 gUiw                make current word uppercase
 guiw                make current word lowercase
@@ -118,6 +131,9 @@ ddkp                swap current line with previous
 
 xp                  transpose two letters (delete and paste, technically)
 
+CTRL-a      increase aumenta il numero di uno  +1
+CTRL-x      decrease diminuisce il numero di uno  -1
+per farlo su una lista selezioni con ctrl-q poi gCTRL-a ricorda il g !!!
 
 ##############################################################################
 # DELETING TEXT
@@ -205,6 +221,21 @@ Esc                 exit visual mode
 
 zf  selezioni qualcosa e accoppi le righe
 zo  espande le righe dei esserci sopra
+zE  cancella tuti i fold definiti 
+
+zf#j       creates a fold from the cursor down # lines.
+zf/string:  creates a fold from the cursor to string .
+zj         moves the cursor to the next fold.
+zk         moves the cursor to the previous fold.
+zo         opens a fold at the cursor.
+zO         opens all folds at the cursor.
+zm         increases the foldlevel by one.
+zM         closes all open folds.
+zr         decreases the foldlevel by one.
+zR         decreases the foldlevel to zero -- all folds will be open.
+zd         deletes the fold at the cursor.
+[z         move to start of open fold.
+]z         move to end of open fold.
 
 
 VISUAL MODE COMMANDS
@@ -254,7 +285,7 @@ ZQ                  quit current file and exit (same as ":q!").
 
 
 ##############################################################################
-# SEARCH/REPLACE
+# SEARCH/REPLACE  SOSTITUISCI
 ##############################################################################
 
 
@@ -271,12 +302,13 @@ N                           repeat search in opposite direction
 :%s/old/new/g               replace all old with new throughout file
 :%s/old/new/gc              replace all old with new throughout file with confirmation
 :5,7s/old/new/gc              replace nelle righe tra 5,7 chiedendo conferma per via del c 
+:.,$s/old/new/gc            cerca dalla riga corrente fino in fondo al file chiedendo cosa fare  
 :5,7s/old/new/gic              replace nelle righe tra 5,7 chiedendo conferma per via del c ignorando il caso
 :5,7s/old/new/gIc              replace nelle righe tra 5,7 chiedendo conferma per via del c senza ignorare il caso
 :argdo %s/old/new/gc | wq   open multiple files and run this command to replace old 
                             with new in every file with confirmation, save and quit
 
-:%s/cerca//ng        dice quante volte compare conta count
+:%s/cerca//ng        dice quante volte compare conta count   cerca trova tutte le occorenze
 
 ##############################################################################
    search in files in folder 
