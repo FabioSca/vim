@@ -163,6 +163,8 @@ Plug 'crusoexia/vim-monokai'
 " Plug 'ajh17/Spacegray.vim'
 " Plug 'atelierbram/Base2Tone-vim'
 " Plug 'colepeters/spacemacs-theme.vim'
+"
+Plug 'dstein64/vim-startuptime'
 
 " Python
 "

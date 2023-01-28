@@ -2,7 +2,7 @@
 
 " Shortcuts {{{{
 " <tab> Switch between the splits
-nnoremap <tab> <C-W><C-W>
+" nnoremap <tab> <C-W><C-W>
 
 " {V,H} create v/h split
 nmap <leader>V :vnew<CR>
