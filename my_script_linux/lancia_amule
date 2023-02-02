@@ -1,0 +1,13 @@
+#!/bin/bash
+
+conta=0
+while [[ -e lancia_amule ]] ; do
+  amule 1>output.txt 2>error.txt &
+  sleep 150
+  killall -9 amule
+  conta=$((conta+1))
+  echo "ciao" $conta
+  sleep 1
+
+done
+
