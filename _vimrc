@@ -14,8 +14,8 @@ endtry
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = ","
-let maplocalleader = "\<Space>"
+let mapleader = " "
+" let maplocalleader = "\<Space>"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => PLUGIN COMMAND
@@ -58,9 +58,6 @@ set fileencoding=utf-8
 set fileencodings=utf-8
 set ttyfast
 
-"" Fix backspace indent
-set backspace=indent,eol,start
-
 "" Tabs. May be overridden by autocmd rules
 set tabstop=4
 set softtabstop=0
@@ -72,13 +69,6 @@ set selection=inclusive
 "" Enable hidden buffers
 set hidden
 
-
-
-"" Searching
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
 
 set autochdir 
 
@@ -119,6 +109,7 @@ nmap <leader>w :w!<cr>
 
 " Toggle line numbers
 nmap <leader>N :set number!<CR>
+nmap <leader>n :set relativenumber!<CR>
 
 " farsi dare tutti i comandi
 " :redir >> map.txt 
@@ -132,6 +123,7 @@ nmap <leader>N :set number!<CR>
 syntax on
 set ruler
 set number
+set relativenumber
 
 let no_buffers_menu=1
 
@@ -169,7 +161,11 @@ endfunction
 
 if has("gui_running")
   if has("gui_mac") || has("gui_macvim")
-    set guifont=Menlo:h12
+    "set guifont=Menlo:h12
+    try
+      set guifont=FiraCode\ Nerd\ Font\ Mono:h10
+    catch
+    endtry
     set transparency=7
   endif
 else
@@ -204,9 +200,6 @@ set laststatus=2
 "" Use modeline overrides
 set modeline
 set modelines=10
-
-
-
 
 
 
@@ -300,11 +293,34 @@ set ai "Auto indent
 set si "Smart indent
 set nowrap "Wrap lines
 
+
+"  se metti powershell no parte nastran
+" if has('win32')
+"   if executable('pwsh.exe')
+"     set shell=pwsh.exe
+"     "\ -NoProfile\ -NoLogo\ -NonInteractive\ -ExecutionPolicy\ RemoteSigned
+"     set shellcmdflag=-command
+"     set shellquote=\"
+"     set shellxquote=
+"   else
+"     set shell=powershell.exe\ -NoProfile\ -NoLogo\ -NonInteractive\ -ExecutionPolicy\ RemoteSigned
+"     set shellcmdflag=-command
+"     set shellquote=\"
+"     set shellxquote=
+"   endif
+" "set shell="C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+" endif
+
+
+
+
 nmap <F3> :NERDTreeToggle<CR>
 
 " => Floaring term  {{{
+"  se metti powershell no parte nastran
 if has('windows')
-    let g:floaterm_shell = 'cmd /k ""D:\PROGRAMMI\scoop\apps\cmder\current\vendor\init.bat" "'
+    "let g:floaterm_shell = 'cmd /k ""D:\PROGRAMMI\scoop\apps\cmder\current\vendor\init.bat" "'
+    let g:floaterm_shell = '"C:\\Program Files\\PowerShell\\7\\pwsh.exe" '
 endif
 
 let g:floaterm_wintype = 'split'
@@ -316,7 +332,6 @@ let g:floaterm_keymap_toggle = '<F4>'
 " => Visual mode related
 """"""""""""""""""""""""""""""
 " Visual mode pressing * or # searches for the current selection
-" Super useful! From an idea by Michael Naumann
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
@@ -338,8 +353,20 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+
+" CTRL-w +            increase window height
+" CTRL-w -            decrease window height
+" CTRL-w <            increase window width
+" CTRL-w >            decrease window width
+map <C-+> <C-W>+
+map <C--> <C-W>-
+map + <C-W>>
+map - <C-W><
+
+
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
+map <leader>d :Bclose<cr>:tabclose<cr>gT
 
 " Close all the buffers
 " map <leader>ba :bufdo bd<cr>
@@ -406,15 +433,6 @@ map <C-H> :bn<CR>
 map <C-L> :bp<CR>       
 map <C-Left> :bp<CR>   
 map <C-Right> :bn<CR> 
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Editing mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Remap VIM 0 to first non-blank character
-map 0 ^
-
-
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -501,14 +519,6 @@ let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 let g:pencil#wrapModeDefault = 'soft'   " default is 'hard'
 
 
-" Vim-pencil Configuration
-" augroup pencil
-"   autocmd!
-"   autocmd FileType markdown,mkd call pencil#init()
-"   autocmd FileType text         call pencil#init()
-" augroup END
-
-
 function! s:my_cr_function()
   return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
   " For no inserting <CR> key.
@@ -541,7 +551,8 @@ if has("gui_running")
   elseif has("gui_macvim")
     set guifont=Menlo\ Regular:h14
   elseif has("gui_win32")
-    set guifont=Consolas:h11:cANSI
+    " set guifont=Consolas:h11:cANSI
+    set guifont=FiraCode\ Nerd\ Font\ Mono:h10
   endif
 
 
@@ -561,12 +572,6 @@ set noswapfile
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
-
-" Use Unix as the standard file type
-set ffs=unix,dos,mac
-
-
-
 
 "
 "fzf-----------------------------------------------------------------------
@@ -630,6 +635,9 @@ let g:ag_working_path_mode= get(g:, 'ag_working_path_mode', 'r')
 " let g:fzf_layout = { 'window': 'enew' }
 " let g:fzf_layout = { 'window': '-tabnew' }
 " 
+" " Enable highlighting of the current line
+" set cursorline
+" 
 " " Customize fzf colors to match your color scheme
 " let g:fzf_colors =
 " \ { 'fg':      ['fg', 'Normal'],
@@ -651,9 +659,9 @@ let g:ag_working_path_mode= get(g:, 'ag_working_path_mode', 'r')
 " " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
 " let g:fzf_history_dir = '~/.local/share/fzf-history'
 " 
-"""""""""""""""""""""""""""""""""""""""
+" """""""""""""""""""""""""""""""""""""
 " " Mappings configurationn
-"""""""""""""""""""""""""""""""""""""""
+" """""""""""""""""""""""""""""""""""""
 " 
 " 
 " 
@@ -695,10 +703,9 @@ inoremap $e ""<esc>i
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General abbreviations
+" => General abbreviations scorciatoie basta scrivere in insert mode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 iab xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
-
 
 " Advanced customization using autoload functions
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
@@ -711,7 +718,7 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
 if has('win32')
 set pythonhome=C:/Anaconda3/python
-set pythondll=C:/Anaconda3/python36.dll
+" set pythondll=C:/Anaconda3/python38.dll
 endif
 
 " let $PYTHONHOME = 'C:/Anaconda3/'
@@ -773,6 +780,42 @@ function MyDiff()
    endif
  endfunction
 
+
+map gc :call Toggle()<CR>
+
+function! Comment()
+	let ft = &filetype
+	if ft == 'php' || ft == 'ruby' || ft == 'sh' || ft == 'make' || ft == 'python' || ft == 'perl'
+		silent s/^/\#/
+	elseif ft == 'javascript' || ft == 'c' || ft == 'cpp' || ft == 'java' || ft == 'objc' || ft == 'scala' || ft == 'go'
+		silent s:^:\/\/:g
+	elseif ft == 'tex'
+		silent s:^:%:g
+	elseif ft == 'vim'
+		silent s:^:\":g
+	endif
+endfunction
+
+function! Uncomment()
+	let ft = &filetype
+	if ft == 'php' || ft == 'ruby' || ft == 'sh' || ft == 'make' || ft == 'python' || ft == 'perl'
+		silent s/^\#//
+	elseif ft == 'javascript' || ft == 'c' || ft == 'cpp' || ft == 'java' || ft == 'objc' || ft == 'scala' || ft == 'go'
+		silent s:^\/\/::g
+	elseif ft == 'tex'
+		silent s:^%::g
+	elseif ft == 'vim'
+		silent s:^\"::g
+	endif
+endfunction
+
+function! Toggle()
+	try
+		call Uncomment()
+	catch
+		call Comment()
+	endtry
+endfunction
 
  " autoricarica il file
 autocmd! bufwritepost _vimrc source %

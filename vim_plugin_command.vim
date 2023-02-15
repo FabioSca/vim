@@ -42,17 +42,17 @@ let g:ycm_python3_binary_path="C:\Anaconda3\python.exe"
 
 let g:python3_host_prog="C:/Anaconda3/python.exe"
 let g:ycm_server_python_interpreter = "C:/Anaconda3/python.exe"
-let &pythonthreedll='C:/Anaconda3/python36.dll'
+"" let &pythonthreedll='C:/Anaconda3/python38.dll'
 let &pythonthreehome='C:/Anaconda3'
 let &PYTHONHOME='C:/Anaconda3'
 let PYTHONHOME='C:/Anaconda3'
 
 let g:ycm_python_interpreter_path = "C:\Anaconda3\python.exe"
-let g:ycm_python_sys_path = ['C:\\Anaconda3\\python36.zip',
+let g:ycm_python_sys_path = ['C:\\Anaconda3\\python38.zip',
  'C:\\Anaconda3\\DLLs',
  'C:\\Anaconda3\\lib',
  'C:\\Anaconda3',
- 'C:\\Users\\e3018\\AppData\\Roaming\\Python\\Python36\\site-packages',
+ 'C:\\Users\\e3018\\AppData\\Roaming\\Python\\Python38\\site-packages',
  'C:\\Anaconda3\\lib\\site-packages',
  'C:\\Anaconda3\\lib\\site-packages\\win32',
  'C:\\Anaconda3\\lib\\site-packages\\win32\\lib',
@@ -65,7 +65,7 @@ let g:ycm_extra_conf_vim_data = [
 "if has("win32")
 "    let g:ycm_python_binary_path = "C:\Anaconda3\python.exe"
 
-" let $PYTHONHOME = "D:\\Python36_32bit"
+" let $PYTHONHOME = "D:\\Python38_32bit"
 let g:ycm_error_symbol = '>>'
 let g:ycm_warning_synbol = '--'
 
@@ -103,10 +103,10 @@ let g:ycm_warning_synbol = '--'
 "Python 3 executable file location
 
 
-" let $PYTHONPATH = "D:/Python36_32bit;D:/Python36_32bit/Lib"
-" let $PYTHONHOME = "D:/Python36_32bit"
-" let g:python3_host_prog = 'D:/Python36_32bit/python.exe'
-" set pythonthreedll=python36.dll
+" let $PYTHONPATH = "D:/Python38_32bit;D:/Python38_32bit/Lib"
+" let $PYTHONHOME = "D:/Python38_32bit"
+" let g:python3_host_prog = 'D:/Python38_32bit/python.exe'
+" set pythonthreedll=python38.dll
 
 if has('windows')
    " let $PYTHON_DLL = "C:\Anaconda3"
