@@ -14,8 +14,16 @@ endtry
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = " "
+" let mapleader = " "
 " let maplocalleader = "\<Space>"
+
+
+let g:mapleader = "\<Space>"
+let g:maplocalleader = ','
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+
+call which_key#register('<Space>', "g:which_key_map")
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => PLUGIN COMMAND

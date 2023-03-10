@@ -1,4 +1,6 @@
 " vim: foldmethod=marker
+"
+" se hai bisogno di unfold tutto zR
 
 " Shortcuts {{{{
 " <tab> Switch between the splits
@@ -28,8 +30,8 @@ nnoremap ; :
 
 
 " WhichKey {{{
-"nnoremap <silent> <leader> :WhichKey '`'<CR>
-set timeoutlen=300
+" nnoremap <silent> <leader> :WhichKey '`'<CR>
+set timeoutlen=1000
 
 let g:which_key_map =  {}
 " }}}}

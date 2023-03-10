@@ -107,6 +107,7 @@ shell
         item(find='Play with MPC-HC|Add to MPC-HC Playlist' parent=@id.more_options.title)
         item(find='Add to RealPlayer' parent=@id.more_options.title)
         item(find='Share with Skype' parent=@id.more_options.title)
+        item(find='MediaInfo' parent=@id.more_options.title)
         
 
 		item(where=this.id==id.more_options image=@icon.more_options sep=both pos=bottom)
@@ -245,7 +246,7 @@ shell
 			item(title=id.settings.title image=inherit cmd='ms-settings:')
 			item(title=id.taskbar_Settings.title image=inherit cmd='ms-settings:taskbar')
 			item(title=id.task_manager.title image=\uE159 cmd='taskmgr.exe')
-			item(title="Process Hacker" image cmd='D:\config\Programs\windows\process\ProcessHacker\ProcessHacker.exe')
+			item(title="Process Explorer" image cmd='D:\PROGRAMMI\scoop\apps\sysinternals\current\procexp.exe')
 			item(title=id.run.title image='imageres.dll,-100' cmd='shell:::{2559a1f3-21d7-11d4-bdaf-00c04f60b9f0}')
 			item(title=id.file_explorer.title image=\uE0D0 cmd='explorer.exe')
 			item(vis=@key.shift() title=id.exit_explorer.title cmd=sys.restartExplorer)
