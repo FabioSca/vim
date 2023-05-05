@@ -9,4 +9,3 @@ function! MarkdownFolds()
 	else	
 	 return "="
 endfunction
-
