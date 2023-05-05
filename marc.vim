@@ -8,4 +8,3 @@ function! MarkdownFolds()
 		return ">1"
 	else	
 	 return "="
-endfunction
