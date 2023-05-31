@@ -1,0 +1,104 @@
+
+
+n  <Tab>       * <C-W><C-W>
+v  #           * :<C-U>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+v  $e          * <Esc>`>a"<Esc>`<i"<Esc>
+v  $q          * <Esc>`>a'<Esc>`<i'<Esc>
+v  $$          * <Esc>`>a"<Esc>`<i"<Esc>
+v  $3          * <Esc>`>a}<Esc>`<i{<Esc>
+v  $2          * <Esc>`>a]<Esc>`<i[<Esc>
+v  $1          * <Esc>`>a)<Esc>`<i(<Esc>
+v  *           * :<C-U>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
+o  ,<Tab>        <Plug>(fzf-maps-o)
+x  ,<Tab>        <Plug>(fzf-maps-x)
+n  ,<Tab>        <Plug>(fzf-maps-n)
+   ,cd           :cd %:p:h<CR>:pwd<CR>
+   ,te           :tabedit <C-R>=expand("%:p:h")<CR>/
+n  ,tl           :exe "tabn ".g:lasttab<CR>
+   ,t,           :tabnext<Space>
+   ,tm           :tabmove<Space>
+   ,tc           :tabclose<CR>
+   ,to           :tabonly<CR>
+   ,tn           :tabnew<CR>
+   ,h            :bprevious<CR>
+   ,l            :bnext<CR>
+   ,bd           :Bclose<CR>:tabclose<CR>gT
+   ,<CR>         :noh<CR>
+n  ,pw         * :Ag <C-R><C-W><CR>
+v  ,           * :<C-U>WhichKeyVisual " "<CR>
+n  ,           * :<C-U>WhichKey " "<CR>
+n  ,H            :new<CR>
+n  ,V            :vnew<CR>
+n  ,N            :set number!<CR>
+n  ,w            :w!<CR>
+   0             ^
+n  ;           * :
+   H             :tabp<CR>
+   L             :tabn<CR>
+n  ft            :Tags<CR>
+n  fb            :Buffers<CR>
+n  ff            :Files<CR>
+v  gx            <Plug>NetrwBrowseXVis
+n  gx            <Plug>NetrwBrowseX
+x  g<M-n>      * :<C-U>call multiple_cursors#select_all("v", 0)<CR>
+n  g<M-n>      * :call multiple_cursors#select_all("n", 0)<CR>
+x  g<C-N>      * :<C-U>call multiple_cursors#new("v", 0)<CR>
+n  g<C-N>      * :call multiple_cursors#new("n", 0)<CR>
+n  qq          * :nohl<CR>
+n  y<C-G>      & :<C-U>call setreg(v:register, fugitive#Object(@%))<CR>
+n  <SNR>141_:  * :<C-U><C-R>=v:count ? v:count : ''<CR>
+   <Plug>AirlineSelectNextTab * :<C-U>exe repeat(':tabn|', v:count1)<CR>
+   <Plug>AirlineSelectPrevTab * gT
+   <Plug>AirlineSelectTab9 * :9tabn<CR>
+   <Plug>AirlineSelectTab8 * :8tabn<CR>
+   <Plug>AirlineSelectTab7 * :7tabn<CR>
+   <Plug>AirlineSelectTab6 * :6tabn<CR>
+   <Plug>AirlineSelectTab5 * :5tabn<CR>
+   <Plug>AirlineSelectTab4 * :4tabn<CR>
+   <Plug>AirlineSelectTab3 * :3tabn<CR>
+   <Plug>AirlineSelectTab2 * :2tabn<CR>
+   <Plug>AirlineSelectTab1 * :1tabn<CR>
+v  <Plug>NetrwBrowseXVis * :<C-U>call netrw#BrowseXVis()<CR>
+n  <Plug>NetrwBrowseX * :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))<CR>
+n  <F4>        * :FloatermToggle<CR>
+n  <Plug>(vimshell_create) * :<C-U>VimShellCreate<CR>
+n  <Plug>(vimshell_switch) * :<C-U>VimShell<CR>
+n  <Plug>(vimshell_split_create) * :<C-U>call <SNR>42_call_vimshell({'split' : 1, 'create' : 1}, '')<CR>
+n  <Plug>(vimshell_split_switch) * :<C-U>call <SNR>42_call_vimshell({'split' : 1}, '')<CR>
+n  <C-E>       * :WinResizerStartResize<CR>
+x  <M-n>       * :<C-U>call multiple_cursors#select_all("v", 0)<CR>
+n  <M-n>       * :call multiple_cursors#select_all("n", 1)<CR>
+x  <C-N>       * :<C-U>call multiple_cursors#new("v", 0)<CR>
+n  <C-N>       * :call multiple_cursors#new("n", 1)<CR>
+n  <Plug>(vimfiler_simple) * :<C-U>VimFilerSimple<CR>
+n  <Plug>(vimfiler_create) * :<C-U>VimFilerCreate<CR>
+n  <Plug>(vimfiler_switch) * :<C-U>VimFiler<CR>
+n  <Plug>(vimfiler_split_create) * :<C-U>VimFilerSplit<CR>
+n  <Plug>(vimfiler_split_switch) * :<C-U><SNR>34_call_vimfiler({ 'split' : 1 }, '')<CR>
+o  <Plug>(fzf-maps-o) * <C-C>:<C-U>call fzf#vim#maps('o', 0)<CR>
+x  <Plug>(fzf-maps-x) * :<C-U>call fzf#vim#maps('x', 0)<CR>
+n  <Plug>(fzf-maps-n) * :<C-U>call fzf#vim#maps('n', 0)<CR>
+n  <Plug>(startify-open-buffers) * :<C-U>call startify#open_buffers()<CR>
+v  <C-V>         c<Esc>"+p
+v  <C-C>         "+yi
+   <C-Q>       * <C-V>
+n  <C-T>         :Tags<CR>
+n  <C-B>         :Buffers<CR>
+n  <C-P>         :Files<CR>
+n  <C-F>         :Files<CR>
+   <C-Right>     :bn<CR><Space>
+   <C-Left>      :bp<CR>  <Space>
+   <S-Right>     :tabn<CR>
+   <S-Left>      :tabp<CR>
+   <C-L>         :bp<CR>      <Space>
+   <C-H>         :bn<CR>         <Space>
+   <C-K>         <C-W>k
+   <C-J>         <C-W>j
+n  <F3>          :NERDTreeToggle<CR>
+n  <F8>          :TagbarToggle<CR>
+v  <C-X>         "+c
+v  <C-Del>       "*d
+v  <S-Del>       "*d
+v  <C-Insert>    "*y
+v  <S-Insert>    "-d"*P
+n  <S-Insert>    "*P
