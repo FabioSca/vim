@@ -115,9 +115,9 @@ nmap <leader>w :w!<cr>
 
 " }}}
 
-" Toggle line numbers
-nmap <leader>N :set number!<CR>
-nmap <leader>n :set relativenumber!<CR>
+" Toggle line numbers problemi con which_key
+" nmap <leader>N :set number!<CR>
+" nmap <leader>n :set relativenumber!<CR>
 
 " farsi dare tutti i comandi
 " :redir >> map.txt 
