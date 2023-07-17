@@ -161,6 +161,7 @@ let g:which_key_map.q = 'which_key_ignore'
 
 call which_key#register("<space>", "g:which_key_map")
 nnoremap <silent> <leader> :<c-u>WhichKey "<space>"<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey "<space>"<CR>
 vnoremap <silent> <leader> :<c-u>WhichKeyVisual "<space>"<CR>
 nnoremap <silent> <leader>pw :Ag <C-R><C-W><CR>
 " }}}
