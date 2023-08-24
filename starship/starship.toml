@@ -2,8 +2,16 @@
 
 # Inserts a blank line between shell prompts
 #right_format = """$time,$cmd_duration"""
-right_format = "$time,$cmd_duration"
-add_newline = false
+right_format = "$time$cmd_duration"
+
+
+
+add_newline = true
+
+
+
+#[line_break]
+#disabled = true
 
 # Change the default prompt format
 format = """\
@@ -47,7 +55,7 @@ show_always = true
 truncation_length = 4
 truncate_to_repo = true
 # truncation_symbol = "…"
-home_symbol = " ~"
+#home_symbol = " ~"
 fish_style_pwd_dir_length = 3
 # format = "([[](bg:#ff3322 fg:#464347)$read_only[](bg:#464347 fg:#ff3322)]($read_only_style))[[](bg:#6F6A70 fg:#464347)$path[](bg:#464347 fg:#6F6A70)]($style)"
 
@@ -105,7 +113,7 @@ disabled = false
 # Last param in the first line/row
 [cmd_duration]
 min_time = 1000
-format = "    took [$duration]($style)"
+format = "took [$duration]($style)"
 disabled = false
 
 
@@ -141,6 +149,7 @@ disabled = true
 
 [time]
 disabled = false
-time_format = "⏲%H:%M  %d %B %Y "
+#time_format = "⏲%H:%M  %d %B %Y "
+time_format = "⏲%H:%M  %d %B "
 style = "fg:#9b9578"
 format = '[$time]($style)'
