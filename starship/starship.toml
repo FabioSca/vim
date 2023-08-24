@@ -1,73 +1,146 @@
-format = """
-$username\
-$hostname\
-$directory\
-$git_branch\
-$git_state\
-$git_status\
-$git_metrics\
-$fill\
-$nodejs\
-$cmd_duration $jobs $time\
-$line_break\
-$character"""
+# ~/.config/starship.toml
 
-[nodejs]
-format = "[$symbol($version )]($style)"
+# Inserts a blank line between shell prompts
+#right_format = """$time,$cmd_duration"""
+right_format = "$time,$cmd_duration"
+add_newline = false
 
-[fill]
-symbol = " "
+# Change the default prompt format
+format = """\
+[╭╴](238)$env_var\
+$all[╰─](238)$character"""
+
+# Change the default prompt characters
+[character]
+success_symbol = "[](238)"
+error_symbol = "[](238)"
+
+# Shows an icon that should be included by zshrc script based on the distribution or os
+#[env_var.STARSHIP_DISTRO]
+#format = '[$env_value](bold white)'  # removed space between distro and rest for pwsh
+#variable = "STARSHIP_DISTRO"
+#disabled = false
+
+# Shows the username
+[username]
+style_user = "white bold"
+style_root = "black bold"
+#format = "者 [$user]($style) "
+format = "者  "
+disabled = false  # disable in powershell
+show_always = true
+
+#[hostname]
+#ssh_only = false
+#format = "on [$hostname](bold yellow) "
+#disabled = false
+
+#[directory]
+##truncation_length = 36
+##truncation_symbol = "…/"
+#read_only_style = "197"
+#read_only = "  "
+#format = "[$path]($style)[$read_only]($read_only_style) "
+
 
 [directory]
-style = "blue"
-read_only = " "
 truncation_length = 4
-truncate_to_repo = false
+truncate_to_repo = true
+# truncation_symbol = "…"
+home_symbol = " ~"
+fish_style_pwd_dir_length = 3
+# format = "([[](bg:#ff3322 fg:#464347)$read_only[](bg:#464347 fg:#ff3322)]($read_only_style))[[](bg:#6F6A70 fg:#464347)$path[](bg:#464347 fg:#6F6A70)]($style)"
 
-[character]
-success_symbol = "[>](purple)"
-error_symbol = "[>](red)"
-vicmd_symbol = "[<](green)"
+
+[directory.substitutions]
+"Documents" = ""
+"Music" = ""
+"Movies" = ""
+"Pictures" = ""
+"Sources" = ""
+"Downloads" = ""
+"~" = ""
+#"~" = "邏"
+# "/" = "  "
+#"/" = "  "
 
 [git_branch]
-symbol = " "
-format = "[$symbol$branch]($style) "
-style = "bright-black"
-
-[jobs]
-symbol = ""
-style = "bold red"
-number_threshold = 1
-format = "[$symbol]($style)"
+symbol = " "
+format = "on [$symbol$branch]($style) "
+truncation_length = 4
+truncation_symbol = "…/"
+style = "bold green"
 
 [git_status]
-format = '([\[$all_status$ahead_behind\]]($style) )'
-style = "cyan"
+format = '[\($all_status$ahead_behind\)]($style) '
+style = "bold green"
+conflicted = "🏳"
+up_to_date = " "
+untracked = " "
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+stashed = " "
+modified = " "
+staged = '[++\($count\)](green)'
+renamed = "襁 "
+deleted = " "
 
-[git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "bright-black"
 
-[git_metrics]
+[python]
+symbol = " "
+python_binary = "python3"
+
+[nodejs]
+format = "via [ $version](bold green) "
 disabled = false
 
+#[ruby]
+#format = "via [ $version]($style) "
+#
+#[kubernetes]
+#format = 'on [ $context\($namespace\)](bold purple) '
+#disabled = false
+
+# Last param in the first line/row
 [cmd_duration]
-format = "[$duration]($style)"
-style = "yellow"
+min_time = 1000
+format = "    took [$duration]($style)"
+disabled = false
 
-[memory_usage]
-symbol = " "
 
-[rust]
-symbol = " "
+## SECOND LINE/ROW: Prompt
+# Somethere at the beginning
+[battery]
+full_symbol = " "
+charging_symbol = " "
+discharging_symbol = " "
+disabled = true
+
+[[battery.display]]  # "bold red" style when capacity is between 0% and 10%
+threshold = 15
+style = "bold red"
+disabled = true
+
+[[battery.display]]  # "bold yellow" style when capacity is between 10% and 30%
+threshold = 50
+style = "bold yellow"
+disabled = true
+
+[[battery.display]]  # "bold green" style when capacity is between 10% and 30%
+threshold = 80
+style = "bold green"
+disabled = true
+
+# Prompt: optional param 1
+#[time]
+#format = " 🕙 $time($style)\n"
+#time_format = "%T"
+#style = "bright-white"
+#disabled = true
 
 [time]
 disabled = false
-style = "bold white"
-format = "[$time]($style)"
-
-[custom.stunnel]
-when = "ps aux | grep stunnel | grep -v grep"
-command = "ps -o etime= -p $(ps aux | grep stunnel | grep -v grep | awk '{print $2}')"
-style = "red"
-format = "[TUNNEL OPEN for $output]($style)"
+time_format = "⏲%H:%M  %d %B %Y "
+style = "fg:#9b9578"
+format = '[$time]($style)'
