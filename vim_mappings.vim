@@ -47,7 +47,8 @@ let g:which_key_map['c'] = {
     \ 'Z'    : [':PluginInstall'  , 'Install plugins'       ],
     \ 'U'    : [':PluginUpdate'   , 'Update plugins'        ],
     \ 'M'    : [':Maps'           , 'Show mappings'         ],
-    \ 'c'    : [':e ~/vim_main/vim_cheat.txt' , 'Cheat sheet'   ] 
+    \ 'c'    : [':e ~/vim_main/vim_cheat.txt' , 'Cheat sheet'   ],
+    \ 't'    : [':e D:/ZONA_E/OBSIDIAN/FABIO/TODO.md' , 'TODO.md'   ] 
     \ }
 " }}}
 

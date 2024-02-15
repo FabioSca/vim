@@ -52,11 +52,11 @@ show_always = true
 
 
 [directory]
-truncation_length = 4
+truncation_length = 40
 truncate_to_repo = true
-# truncation_symbol = "…"
+truncation_symbol = "…"
 #home_symbol = " ~"
-fish_style_pwd_dir_length = 3
+#fish_style_pwd_dir_length = 3
 # format = "([[](bg:#ff3322 fg:#464347)$read_only[](bg:#464347 fg:#ff3322)]($read_only_style))[[](bg:#6F6A70 fg:#464347)$path[](bg:#464347 fg:#6F6A70)]($style)"
 
 
