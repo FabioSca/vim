@@ -1,0 +1,43 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "echo",
+            "type": "shell",
+            "command": "echo Hello"
+        }
+        {
+            "label": "Open UI File in Designer",
+            "type": "shell",
+            "command": "designer.exe",
+            "args": ["${file}"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+        {
+            "label": "Leonardo Distribution PYE",
+            "type": "shell",
+            "command": "C:\\Projects\\ALA5\\LeonardoDistribution\\LeoDIST_PY.bat",
+            "args": ["${file}"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ],
+    "contributes": {
+        "menus": {
+            "editor/context": [
+                {
+                    "when": "editorLangId == 'ui'", 
+                    "command": "workbench.action.tasks.runTask",
+                    "group": "navigation@1" 
+                }
+            ]
+        }
+    }
+}

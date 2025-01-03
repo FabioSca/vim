@@ -171,7 +171,8 @@ if has("gui_running")
   if has("gui_mac") || has("gui_macvim")
     "set guifont=Menlo:h12
     try
-      set guifont=FiraCode\ Nerd\ Font\ Mono:h10
+      ""set guifont=FiraCode\ Nerd\ Font\ Mono:h10
+      set guifont=Fira\ Code:h10
     catch
     endtry
     set transparency=7
@@ -560,7 +561,7 @@ if has("gui_running")
     set guifont=Menlo\ Regular:h14
   elseif has("gui_win32")
     " set guifont=Consolas:h11:cANSI
-    set guifont=FiraCode\ Nerd\ Font\ Mono:h10
+    set guifont=Fira\ Code:h10
   endif
 
 

@@ -1,0 +1,51 @@
+{
+    "[python]": {
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.formatOnType": true,
+        "editor.wordBasedSuggestions": "off"
+    },
+    "python.defaultInterpreterPath": "c:\\DE-Python\\envs\\LEO4\\Scripts\\python.exe",
+    "editor.minimap.enabled": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "files.associations": {
+        "*.ahk": "ahk"
+    },
+    "files.exclude": {
+        "**/.project": true,
+        "**/.pydevproject": true,
+        "**/*.py.bak": true,
+        "**/*.py~": true,
+        "**/*.pyc": true,
+        "**/*.pye": true
+    },
+    "search.exclude": {
+        "**/*.py~": true
+    },
+    "openInExternalApp.openMapper": [
+    {
+      // represent file extension name
+      "extensionName": "ui",
+      // the external applications to open the file which extension name is html
+      "apps": [
+        // openCommand can be shell command or the complete executable application path
+        // title will be shown in the drop list if there are several apps
+        {
+          "title": "Open in Qt Designer",
+          "openCommand": "C:\\DE-Python\\envs\\LEO4\\Lib\\site-packages\\qt5_applications\\Qt\\bin\\designer.exe"
+        },
+        {
+          "title": "Convert in py",
+          // On MacOS, openCommand should be 'Firefox Developer Edition.app'
+          "openCommand": "C:\\Projects\\ALA5\\QT_PY\\pyqttools.bat"
+          // open in firefox under private mode
+          //"args": ["-private-window"]
+        }
+      ]
+    },
+    {
+      // shared config, details here: https://github.com/tjx666/open-in-external-app/issues/45
+      "extensionName": "__ALL__",
+      "apps": "MacVim"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+    "[python]": {
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.formatOnType": true,
+        "editor.wordBasedSuggestions": "off"
+    },
+    "python.defaultInterpreterPath": "c:\\DE-Python\\envs\\LEO4\\Scripts\\python.exe"
+}

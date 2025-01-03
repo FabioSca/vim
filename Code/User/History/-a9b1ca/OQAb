@@ -1,0 +1,4 @@
+.idea/*.*
+CRIPTA/dist/*.*
+.metadata/*.*
+*/__pycache__/*.*

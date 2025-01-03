@@ -1,0 +1,8 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\CLSID\{51EEE242-AD87-11d3-9C1E-0090278BBD99}]
+@="Vim Shell Extension"
+
+[HKEY_CLASSES_ROOT\CLSID\{51EEE242-AD87-11d3-9C1E-0090278BBD99}\InProcServer32]
+@="C:\\PROGRAMMI\\scoop\\apps\\vim\\current\\GvimExt64\\gvimext.dll"
+"ThreadingModel"="Apartment"

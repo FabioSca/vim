@@ -1,0 +1,24 @@
+{
+  "environment": {
+    "executable": "C:\\DE-Python\\envs\\LEO4\\Scripts\\python.exe",
+    "prefix": "C:\\DE-Python\\envs\\LEO4",
+    "version": "3.10.12.final.0",
+    "is64Bit": true,
+    "symlinks": [
+      "C:\\DE-Python\\envs\\LEO4\\Scripts\\python.exe"
+    ]
+  },
+  "symlinks": [
+    [
+      "C:\\DE-Python\\envs\\LEO4\\Scripts\\python.exe",
+      {
+        "secs_since_epoch": 1727011436,
+        "nanos_since_epoch": 302213700
+      },
+      {
+        "secs_since_epoch": 1727011436,
+        "nanos_since_epoch": 288219100
+      }
+    ]
+  ]
+}

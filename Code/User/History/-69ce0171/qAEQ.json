@@ -1,0 +1,43 @@
+{
+    "[python]": {
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.formatOnType": true,
+        "editor.wordBasedSuggestions": "off"
+    },
+    "python.defaultInterpreterPath": "c:\\DE-Python\\envs\\LEO4\\Scripts\\python.exe",
+    "editor.minimap.enabled": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "files.associations": {
+        "*.ahk": "ahk"
+    },
+    "files.exclude": {
+        "**/.project": true,
+        "**/.pydevproject": true,
+        "**/*.py.bak": true,
+        "**/*.py~": true,
+        "**/*.pyc": true,
+        "**/*.pye": true
+    },
+    "search.exclude": {
+        "**/*.py~": true
+    },
+    "explorer.contextMenus": {
+        "commandPalette": {
+            "shell": [
+                {
+                    "command": "qt-designer",
+                    "when": "resourceExtname == .ui"
+                }
+            ]
+        }
+    },
+    "commands": {
+        "qt-designer": {
+            "command": "designer",
+            "args": ["${file}"]
+        }
+    },
+    "workbench.editorAssociations": {
+        "*.ui": "default"
+    }
+}

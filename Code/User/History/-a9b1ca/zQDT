@@ -1,0 +1,11 @@
+.idea/*.*
+CRIPTA/dist/*.*
+.metadata/*.*
+*/__pycache__/*.*
+*.pyc
+*.pye
+*.png
+*.xls*
+*.ppt*
+*.bmp
+
